@@ -1,0 +1,171 @@
+<div [@routerTransition] class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar"  width="150px" />
+            
+            
+        
+           
+                <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+            
+
+                <div class="form-content">
+
+                    
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'UserName' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="UserName"
+                        />
+                    </div>
+
+                    
+                   
+
+                
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'phoneNumber' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="phoneNumber"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'address' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="address"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'about' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="about"
+                        />
+                    </div>
+                  
+
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'email' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="email"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'services_about' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="services_about"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'services_title' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="services_title"
+                        />
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Role' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="Role"
+                        />
+                    </div>
+
+
+                    
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'password' | translate"
+                            class="form-control input-underline input-lg"
+                            type="password"formControlName="password"
+                        />
+                    </div>
+
+                    
+                
+                   
+                    
+                </div>
+          
+                   
+       <!-- <a id="forget" href="#" routerLink="/">
+        Forget Password
+       </a> -->
+
+
+       <div>
+
+        
+       </div>
+
+
+
+      
+
+       <!-- <button class="btn rounded-btn"  [routerLink]="['/login']" 
+        type="submit" [disabled]="btnLoader" form="createForm">Submit Button</button> -->
+
+
+
+        <a (click)="submit()" [routerLink]="['/login']" class="btn rounded-btn"  form="createForm">{{
+            'Submit' | translate
+        }}</a>
+<!-- 
+    <a [routerLink]="['/dashboard']" class="btn rounded-nbt">{{ 'Register' | translate }}</a
+        >&nbsp;
+        <a [routerLink]="['/login']" class="btn rounded-btn">{{ 'Log in' | translate }}</a> -->
+               
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+<!-- <div class="row">
+    <div class="col-4">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputText">Text to render</label>
+                <input autocomplete="off" value="Sample Text" type="text" class="form-control" id="exampleInputText" aria-describedby="Text" placeholder="Enter any text">
+            </div>
+        </form>
+
+        <button onclick="Merge()" class="btn mt-3 btn-success">Create PDF</button>
+    </div>
+    <div class="col-8">
+        <div class="tx-container">
+            @Html.TXTextControl().DocumentViewer(settings => {
+                settings.Dock = DocumentViewerSettings.DockStyle.Fill;
+                settings.IsSelectionActivated = false;
+                settings.ShowThumbnailPane = false;
+            }).Render()
+        </div>
+    </div>
+</div> -->
+
+     
+
+
+     
+      

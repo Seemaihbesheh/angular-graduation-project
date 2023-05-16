@@ -1,0 +1,54 @@
+$topnav-background-color: #121421;
+:host {
+    .navbar {
+        background-color: $topnav-background-color;
+        
+        .navbar-brand {
+            color: #4a80f0;
+        }
+
+        .nav-item > a {
+            color: #ffffff;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+        .ml-auto {
+            margin-left: auto;
+        }
+        .navbar-brand {
+            width: 235px;
+            margin-left: 30px;
+        }
+    }
+
+    .messages {
+        width: 300px;
+
+        .media {
+            border-bottom: 3px solid #ddd;
+            padding:  15px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .media-body {
+            h5 {
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .small {
+                margin: 0;
+            }
+
+            .last {
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+    }
+}

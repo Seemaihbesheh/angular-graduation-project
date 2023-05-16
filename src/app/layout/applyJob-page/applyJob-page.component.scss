@@ -1,0 +1,140 @@
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 6px 9px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+
+body{
+  background:#eee;
+
+}
+.search-result .title h3 {
+  margin: 0 0 15px;
+  color: #333;
+}
+.search-result .title p {
+  font-size: 12px;
+  color: #333;
+}
+.well {
+  border: 0;
+  padding: 20px;
+  min-height: 63px;
+  background: #fff;
+  box-shadow: none;
+  border-radius: 3px;
+  position: relative;
+  max-height: 100000px;
+  border-bottom: 2px solid #ccc;
+  transition: max-height 0.5s ease;
+  -o-transition: max-height 0.5s ease;
+  -ms-transition: max-height 0.5s ease;
+  -moz-transition: max-height 0.5s ease;
+  -webkit-transition: max-height 0.5s ease;
+}
+.form-control {
+  height: 45px;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+}                    
+
+
+
+body {
+  font: 16px Arial, Verdana, Tahoma, Sans-serif;
+}
+
+.container {
+  width: 852px;
+  background: #ccc;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.wrapper {
+  margin: 8px 0;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+input {
+  min-width: 20px;
+  padding: 8px;
+  margin: 0 4px 0 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.button {
+  padding: 8px 16px;
+  min-height: 48px;
+  min-width: 10px;
+  word-wrap: nowrap;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+input {
+    order: 0;
+    align-self: auto;  
+}
+
+.search {
+  flex: 2 1 auto;
+}
+
+.date-from {
+  flex: 1 1 auto;
+}
+
+.date-to {
+  flex: 1 1 auto;
+}
+
+.button {
+    order: 4;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+
+.clibkbtnn{
+  background-color: DodgerBlue;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative;
+}
+.spanclivk{
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}

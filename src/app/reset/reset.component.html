@@ -1,0 +1,36 @@
+<div [@routerTransition] class="reset-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+
+
+            <form role="form" id="createForm">
+
+                <div class="form-content">
+                    <div class="form-group">
+                        <br> <br>
+                        <br>
+                        <h3>Please enter your email</h3>
+                        <input [placeholder]="'Email' | translate" class="form-control input-underline input-lg"
+                            type="text" />
+
+                    </div>
+
+
+                </div>
+                <br>
+                <a  [routerLink]="['/changepasss']" class="btn btn-info " form="createForm">{{
+                    'Enter' | translate }}
+                </a>
+
+
+
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,47 @@
+<div [@routerTransition] class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar"
+                src="assets/images/job-hup-high-resolution-logo-color-on-transparent-background.png" width="150px" />
+
+            <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+
+                <div class="form-content">
+                    <div class="form-group">
+                        <input [placeholder]="'Username' | translate" class="form-control input-underline input-lg"
+                            type="text" formControlName="UserName" />
+
+                    </div>
+
+                    <div class="form-group">
+                        <input [placeholder]="'Password' | translate" class="form-control input-underline input-lg"
+                            type="password" formControlName="password" />
+                    </div>
+                </div>
+
+
+
+
+                <a (click)="submit()" [routerLink]="['/dashboard']" class="btn rounded-btn" form="createForm">{{
+                    'Log in' | translate }}</a>
+                &nbsp;&nbsp;
+
+                <a [routerLink]="['/signup']" class="btn rounded-btn">{{ 'Sign up user' | translate }}</a>
+
+                <a [routerLink]="['/signupcompany']" class="btn rounded-btn">{{ 'Sign up company' | translate }}</a>
+                &nbsp;
+
+              
+
+
+            </form>
+        </div>
+        <a [routerLink]="['/emailForgetpassword']" href="Javascript:void(0)">Forget Password</a>
+    </div>
+
+
+
+
+
+
+</div>

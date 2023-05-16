@@ -1,0 +1,213 @@
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+  integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<div class="container">
+  <div  class="row justify-content-center">
+    <div  class="col-md-9">
+      <div   class="row align-items-center">
+        <div   class="col-lg-5">
+          <div   class="resume-base bg-primary user-dashboard-info-box p-4">
+            <div    class="profile">
+              <div  class="jobster-user-info">
+                <div class="profile-avatar">
+                  <img class="img-fluid " src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                </div>
+                <div  class="profile-avatar-info mt-3">
+                  <h5 class="text-white">Let's create your CV</h5>
+                </div>
+              </div>
+            </div>
+            <div class="about-candidate border-top">
+
+              <div class="candidate-info">
+                <h6 class="text-white">Name</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">Email</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">AboutMe</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">Skills</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">Languages</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">GPA</h6>
+              </div>
+             
+              <div class="candidate-info">
+                <h6 class="text-white">University</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">Phone:</h6>
+              </div>
+              <div class="candidate-info">
+                <h6 class="text-white">ExperienceYear</h6>
+              </div>
+             
+
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+        <div *ngFor="let error of errorList">
+
+          <div class="alert alert-danger"> {{error}}</div>
+        </div> -->
+
+
+
+
+
+
+
+        <div class="col-lg-7">
+          <div class="resume-experience">
+
+            <div class="timeline-box mt-4">
+              <div class="col-lg-6">
+                <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form" >
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" name="name" type="name" placeholder="Enter text"
+                    formControlName="name" />
+                  </div>
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" name="email" type="email" placeholder="Enter text"
+                    formControlName="email"/>
+                  </div>
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+                
+
+                  <fieldset class="form-group">
+                    <label for="aboutMe">About Me</label>
+                    <input type="text" placeholder="Enter text" class="form-control" rows="3"
+                    formControlName="aboutMe" >
+                  </fieldset>
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+                  <div class="col-sm-12 mb-3">
+                    <div class="form-group">
+                      <label class="required-field" for="skills">Skills</label>
+                      <textarea class="form-control" name="skills"  
+                        placeholder="Enter text"
+                         formControlName="skills" ></textarea>
+                    </div>
+                  </div>
+                  
+                  
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+                  <div class="form-group">
+                    <label >Language</label>
+                    <input class="form-control" placeholder="Enter text" 
+                    formControlName="languages"/>
+                  </div>
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+                  
+
+                  
+                  <fieldset class="form-group">
+                    <label for="gpa">GPA</label>
+                    <input class="form-control" type="number" placeholder="Enter GPA" 
+                    formControlName="gpa"/>
+                  </fieldset>
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+                  <fieldset class="form-group">
+                    <label for="university">university</label>
+                    <input class="form-control" placeholder="Enter University" 
+                    formControlName="university"/>
+                  </fieldset>
+
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input class="form-control" type="number" placeholder="Enter text" 
+                    formControlName="phone_number"/>
+                  </div>
+
+
+                  
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+                  <div class="form-group">
+                    <label >Experience Year</label>
+                    <input class="form-control" type="number" placeholder="Enter text"
+                    formControlName="experienceYear"/>
+                  </div>
+
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+
+
+
+
+                  <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+                  <button  (click)="createPDF()" class="btn btn-secondary" type="submit" [disabled]="btnLoader" form="createForm" >Submit Button</button>
+
+
+                </form>
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <button (click)="createPDF()"> sumbit</button> -->
+
+
+<script src="src/assets/exapmle1.js"></script>
+         

@@ -1,0 +1,44 @@
+<h1>Chat</h1>
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Chat Box</div>
+
+    </div>
+
+    <div class="m-20 p-5">
+        <div class="msg-box">
+
+            <ul>
+
+                <li *ngFor="let mObj of msgInboxArray" [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'">
+                    <span style="color: black; "> From :</span> Seema
+                    <span style="color: black;"> To :</span> {{mObj.user}} <br />
+
+                    <span class="msg-italic-style"> {{mObj.msgText}}</span><br />
+                    <span style="font-size: xx-small;" class="time_date"> {{mObj.date | date:'medium'}} </span>
+                    <br>
+                    <br>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <br><br>
+        <br>
+
+        To :<input style="width: 5cm;background-color: rgb(197, 205, 209)" type="text" placeholder=" name"
+            class="name-box" [(ngModel)]="msgDto.user" class="form-control" />
+
+        <div class="ud-flex-row">
+            <!-- <input type="text" class="msg-Input form-control" placeholder="Enter Msg" [(ngModel)]="msgDto.msgText"> -->
+
+            <textarea class="form-control" class="msg-Input form-control" [(ngModel)]="msgDto.msgText"
+                placeholder="Enter Msg" cols="60" rows="3">
+         </textarea>
+            <button class="btn btn-info" (click)="send()"> Send</button>
+        </div>
+
+    </div>
+</div>

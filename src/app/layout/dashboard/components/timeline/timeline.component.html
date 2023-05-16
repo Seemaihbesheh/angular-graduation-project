@@ -1,0 +1,145 @@
+<!------------main--------------->
+
+<app-add-post></app-add-post>
+<div class="main">
+
+    <!------------------left------------------->
+
+
+
+
+        <!------------------left------------------->
+      
+      
+      
+        <!------------center---------------------->
+     
+    
+    <!------------center---------------------->
+
+
+    <div class="center" *ngIf="products">
+        <div *ngFor="let product of products">
+        <!-- <div  style="  display: inline-block; " class="mb-3">
+                
+                <form  class="form-inline my-2 my-lg-0">
+                    <input  aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="text" />
+                    
+                    <button style="color:beige ;background-color: rgb(18, 156, 45);" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="my_post">
+
+                <div class="post_top">
+
+                    <img src="image/profile.png">
+                    <input type="text" placeholder="What's on you mind, John?">
+
+                </div>
+
+                <hr>
+
+                <div class="post_bottom">
+
+
+
+                    <div class="post_icon">
+                        <i class="fa-solid fa-images green"></i>
+                        <p>Photo</p>
+
+                    </div>
+
+                    <button class="btn btn-sm btn-success" type="button">Post</button>
+ -->
+
+        <!-- </div> -->
+
+        <!-- </div> -->
+
+
+
+        <!-- *ngIf="products" -->
+    
+        <div class="friends_post"  >
+            
+
+            <div class="friend_post_top">
+
+                <div class="img_and_name">
+
+                    <img src="image/post_1.jpg">
+
+                    <div class="friends_name">
+                        <p class="friends_name">
+                            Senuda De Silva
+                        </p>
+                        <p class="time">16h.</p>
+                    </div>
+
+
+                </div>
+
+                <div class="menu">
+
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                </div>
+
+            </div>
+            
+            <p >
+               
+                {{product.productName}}
+                <a> {{product.productImage}}</a>
+               
+            </p>
+          
+            <img [src]="imageBaseUrl+product.productImage">
+
+           
+            <div class="info">
+
+                <span>15 likes</span>
+            </div>
+
+            <hr>
+
+            <div class="like">
+
+                <div class="like_icon">
+                    <i class="fa-solid fa-thumbs-up activi"></i>
+                    <p>Like</p>
+                </div>
+
+            </div>
+            
+
+            <hr>
+
+            <div class="comment_warpper">
+
+
+                <div class="circle"></div>
+
+                <div class="comment_search">
+
+                    <input type="text" placeholder="Write a comment">
+
+
+                </div>
+
+            </div>
+
+        </div>
+   
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<!------------------right------------------>
+
+

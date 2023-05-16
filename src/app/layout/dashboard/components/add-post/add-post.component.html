@@ -1,0 +1,64 @@
+
+
+
+<div class="main">
+
+  <!------------------left------------------->
+
+
+
+  <!------------center---------------------->
+  
+
+
+
+  <div class="center">
+    <div class="my_post">
+
+      <div class="post_top">
+
+        <form [formGroup]="form" role="form" id="createForm" (ngSubmit)="onPost()">
+         
+          <div class="mb-63">
+            <textarea class="form-control"
+               formControlName="productName"  placeholder="Share with us your experince ?"   cols="60" rows="3"
+               >
+            </textarea>
+            <!-- <input type="text" class="form-control" formControlName="productName" placeholder="Share with us your experince ?"> -->
+            <div *ngIf="(f['productName'].touched || f['productName'].dirty) && f['productName'].invalid">
+              <div *ngIf="f['productName'].errors?.['required']" class="text-danger">Subject is reqires</div>
+            </div>
+          </div>
+
+
+          <br>
+          <div class="mb-3">
+           
+            <input style="background-color: whitesmoke;"  type="file" (change)="onChange($event)" >
+          </div>
+
+
+          <div class="mb-3 form-check" *ngIf="status">
+            {{status.message}}
+          </div>
+
+
+
+          <hr>
+
+          <div class="post_bottom">
+
+
+
+           
+            <!-- <button class="btn btn-sm btn-success" type="button">Post</button> -->
+            <button type="submit" class="btn btn-sm btn-success" [disabled]="form.invalid">Submit</button>
+
+            
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>

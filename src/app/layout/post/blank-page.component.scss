@@ -1,0 +1,35 @@
+.msg-box{
+    width: 100%;
+    height: calc(100%-140px);
+    border: 1px solid #2b46ce;
+}
+.card-title{
+    text-align: center;
+    font-size: xx-large;
+}
+
+.ud-flex-row{
+    margin-top: 10px;
+    padding-top: 1-px;
+}
+.btn-info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+body{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.in-msg{
+    color: blue;
+    text-align: left;
+}
+.ex-msg{
+    color: blueviolet;
+    text-align: right;
+}
+ul{
+    list-style: none;
+}

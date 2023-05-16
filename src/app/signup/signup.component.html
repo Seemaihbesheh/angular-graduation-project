@@ -1,0 +1,189 @@
+<div [@routerTransition] class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar"  width="150px" />
+            
+            
+        
+           
+                <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+            
+
+                <div class="form-content">
+
+                    
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'UserName' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="UserName"
+                        />
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'First_Name' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="FirstName"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Last_Name' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="LastName"
+                        />
+                    </div>
+
+                
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'phoneNumber' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="phoneNumber"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'City' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="City"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Bio' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="Bio"
+                        />
+                    </div>
+                  
+
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'State' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="State"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Email' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="Email"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'GPA' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="GPA"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Education' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="Education"
+                        />
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Role' | translate"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="Role"
+                        />
+                    </div>
+
+
+                    
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'Password' | translate"
+                            class="form-control input-underline input-lg"
+                            type="password"formControlName="password"
+                        />
+                    </div>
+
+                    
+                
+                   
+                    
+                </div>
+          
+                   
+       <!-- <a id="forget" href="#" routerLink="/">
+        Forget Password
+       </a> -->
+
+
+       <div>
+
+        
+       </div>
+
+
+
+      
+
+       <!-- <button class="btn rounded-btn"  [routerLink]="['/login']" 
+        type="submit" [disabled]="btnLoader" form="createForm">Submit Button</button> -->
+
+
+
+        <a (click)="submit()" [routerLink]="['/login']" class="btn rounded-btn"  form="createForm">{{
+            'Submit' | translate
+        }}</a>
+
+               
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+<!-- <div class="row">
+    <div class="col-4">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputText">Text to render</label>
+                <input autocomplete="off" value="Sample Text" type="text" class="form-control" id="exampleInputText" aria-describedby="Text" placeholder="Enter any text">
+            </div>
+        </form>
+
+        <button onclick="Merge()" class="btn mt-3 btn-success">Create PDF</button>
+    </div>
+    <div class="col-8">
+        <div class="tx-container">
+            @Html.TXTextControl().DocumentViewer(settings => {
+                settings.Dock = DocumentViewerSettings.DockStyle.Fill;
+                settings.IsSelectionActivated = false;
+                settings.ShowThumbnailPane = false;
+            }).Render()
+        </div>
+    </div>
+</div> -->
+
+     
+
+
+     
+      

@@ -1,0 +1,155 @@
+
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          height: 300px;
+          "></div>
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <div class="row justify-content-md-center">
+               
+
+                    
+            <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+          
+
+                <div class="form-content">
+  
+                    
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'UserName'"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="UserName"
+                        />
+                    </div>
+  
+                    
+   <br>
+                
+                    <div class="form-group">
+                        <input
+                            [placeholder]="'phoneNumber'"
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="phoneNumber"
+                        />
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'address'"
+  
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="address"
+                        />
+                    </div><br>
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'about'"
+  
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="about"
+                        />
+                    </div><br>
+                  
+  
+  
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'email'"
+  
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="email"
+                        />
+                    </div><br>
+
+
+
+
+
+                    
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'services_about'"
+  
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="services_about"
+                        />
+                    </div><br>
+  
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'services_title'"
+  
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="services_title"
+                        />
+                    </div><br>
+  
+  
+  
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'Role'"
+  
+                            class="form-control input-underline input-lg"
+                            type="text"formControlName="Role"
+                        />
+                    </div><br>
+  
+  
+                    
+                    <div class="form-group">
+                        <input
+                        [placeholder]="'password'"
+  
+                            class="form-control input-underline input-lg"
+                            type="password"formControlName="password"
+                        />
+                    </div><br>
+  
+                    
+                
+                   
+                    
+                </div>
+          
+       
+       <div>
+  
+        
+       </div>
+  
+  
+      
+  
+  
+        <!-- <a (click)="submit()" [routerLink]="['/login']" class="btn rounded-btn"  form="createForm">{{
+            'Submit'
+        }}</a> -->
+        <a (click)="submit()" class="btn btn-primary btn-block mb-4"  form="createForm">{{
+          'Submit'
+      }}</a>
+  
+ 
+               
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+      </div>
+
+  </section>

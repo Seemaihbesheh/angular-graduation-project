@@ -1,0 +1,120 @@
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+    integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+    integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+    integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+
+
+    
+   
+
+
+<div class="container">
+    <div  class="row">
+        <div  class="col-md-11 mt-60 mx-md-auto">
+            <div class="login-box bg-white pr-lg-5 pr-0">
+                <div style="background-color: cornflowerblue;" class="row no-gutters align-items-center">
+                    <div   class="col-md-6 order-md-last">
+                        <div class="form-wrap bg-white">
+
+                        <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+
+
+                            <div class="form-content">
+
+
+                                <div class="form-group">
+                                    <input [placeholder]="'Description'" class="form-control input-underline input-lg"
+                                        type="text" formControlName="Description" />
+                                </div>
+
+
+                                <br>
+
+                                <div class="form-group">
+                                    <input [placeholder]="'Pre_title'" class="form-control input-underline input-lg"
+                                        type="text" formControlName="Pre_title" />
+                                </div>
+                                <br>
+
+                                <div class="form-group">
+                                    <input [placeholder]="'Title'" class="form-control input-underline input-lg"
+                                        type="text" formControlName="Title" />
+                                </div><br>
+                                <div class="form-group">
+                                    <input [placeholder]="'Requrment'" class="form-control input-underline input-lg"
+                                        type="text" formControlName="Requrment" />
+                                </div><br>
+
+
+
+                                <div class="form-group">
+                                    <input  class="form-control input-underline input-lg"
+                                        type="text" formControlName="Place"  [placeholder]="'Place'"/>
+                                </div><br>
+
+
+
+
+
+
+                                <div class="form-group">
+                                    <input [placeholder]="'Email'" class="form-control input-underline input-lg"
+                                        type="text" formControlName="Email" />
+                                </div><br>
+
+                                <div class="form-group">
+                                    <input [placeholder]="'Job_Deadline'"  type="datetime-local" class="form-control input-underline input-lg"
+                                        formControlName="Job_Deadline" />
+                                </div><br>
+
+
+
+                                <div class="form-group">
+                                    <label>auto fill company id</label>
+                                    <input  class="form-control input-underline input-lg"
+                                        formControlName="companyid" [(ngModel)]="companyID"  [placeholder]="'companyid'"/>
+                                </div><br>
+
+                            </div>
+
+                            <div>
+
+
+                            </div>
+
+
+
+                            <a (click)="submit()" class="btn btn-primary btn-block mb-4" form="createForm">{{
+                                'Submit'
+                                }}</a>
+
+
+
+                        </form>
+                    
+
+                    </div>
+                </div>
+                <div  class="col-md-6 order-md-first">
+                    <div  class="content text-center">
+                        <div class="border-bottom pb-5 mb-5">
+                            <h3 class="c-black">Let's create new job</h3>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

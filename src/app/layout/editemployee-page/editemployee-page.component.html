@@ -1,0 +1,278 @@
+<div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+                <div class="col-md-3 border-right">
+                        <div *ngIf="user2" class="d-flex flex-column align-items-center text-center p-3 py-5"><img
+                                        class="rounded-circle mt-5" width="150px"
+                                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                                        class="font-weight-bold">{{user2.userName}}</span><span
+                                        class="text-black-50">{{user2.email}}</span><span>
+                                </span></div>
+                </div>
+
+
+                <div class="col-md-5 border-right">
+
+
+
+                        <form [formGroup]="frm" (ngSubmit)="onPost()">
+                                <div class="p-3 py-5">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h4 class="text-right">Edit User Profile </h4>
+                                        </div>
+                                        <div class="row mt-2">
+
+                                                <div class="col-md-12"><label class="labels">userName</label>
+                                                        <input type="text" class="form-control"
+                                                                formControlName="userName" value="">
+                                                </div>
+
+                                        </div>
+
+                                        <div class="row mt-2">
+
+                                                <div class="col-md-12"><label class="labels">firstName </label>
+                                                        <input type="text" class="form-control"
+                                                                formControlName="firstName" value="">
+                                                </div>
+
+                                        </div>
+                                        <div class="row mt-2">
+
+                                                <div class="col-md-12"><label class="labels">lastName </label>
+                                                        <input type="text" class="form-control"
+                                                                formControlName="lastName" value="">
+                                                </div>
+
+                                        </div>
+
+
+                                        <div class="row mt-3">
+                                                <div class="col-md-12"><label class="labels">phoneNumber: </label>
+                                                        <input id="myInputField" type="number"
+                                                                formControlName="phoneNumber" class="form-control" p
+                                                                value="">
+                                                </div>
+
+                                        </div>
+                                        <div class="row mt-3">
+                                                <div class="col-md-12"><label class="labels">email</label>
+                                                        <input type="text" class="form-control" formControlName="email"
+                                                                formControlName="email" value="">
+                                                </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                                <div class="col-md-12"><label class="labels">password</label>
+
+                                                        <input type="text" class="form-control"
+                                                                formControlName="password" value="">
+                                                </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                                <div class="col-md-12"><label class="labels">city</label>
+
+                                                        <input type="text" class="form-control" formControlName="city"
+                                                                value="">
+                                                </div>
+
+
+                                        </div>
+
+
+                                        <div class="row mt-3">
+                                                <div class="col-md-12"><label class="labels">bio</label>
+                                                        <input type="text" class="form-control" formControlName="bio"
+                                                                style="height: 100%;" value="">
+                                                </div>
+
+                                        </div>
+
+                                        <div class="row mt-3">
+                                                <div class="row mt-12">
+                                                        <div class="col-md-12"><label class="labels">state</label>
+                                                                <input type="text" class="form-control"
+                                                                        formControlName="state" value="">
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                        <div class="row mt-3">
+                                                <div class="row mt-12">
+                                                        <div class="col-md-12"><label class="labels">gpa</label>
+                                                                <input type="" class="form-control"
+                                                                        formControlName="gpa" value="">
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="row mt-3">
+                                                <div class="row mt-12">
+                                                        <div class="col-md-12"><label class="labels">education</label>
+                                                                <input type="" class="form-control"
+                                                                        formControlName="education" value="">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                                <div class="row mt-12">
+                                                        <div class="col-md-12"><label class="labels">experience</label>
+                                                                <input type="" class="form-control"
+                                                                        style="height: 100%;"
+                                                                        formControlName="experience" value="">
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+                                        <!-- <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
+                                new Profile</button></div> -->
+                                        <br>
+                                        <br><br>
+                                        <br>
+                                        <button class="btn btn-info " type="submit" [disabled]="frm.invalid">
+
+                                                Submit</button>
+
+
+
+
+
+                                </div>
+                        </form>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="col-md-4">
+
+
+                        <h3>Add Projets</h3>
+                        <div class="d-flex justify-content-between align-items-center experience">
+
+                        </div><br>
+                        <div>
+
+                                <form role="form2" id="createForm2" (ngSubmit)="submit2()" [formGroup]="form2">
+
+
+                                        <div class="form-content">
+
+
+                                                <div class="form-group">
+                                                        <input placeholder="Add title" class="form-control input-underline input-lg" type="text"
+                                                                formControlName="Title" />
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                        <textarea placeholder="Add decription" class="form-control input-underline input-lg" type="text"
+                                                                formControlName="Decription" ></textarea>
+                                                </div>
+                                                <br>
+
+                                               
+                                        </div>
+
+                                </form>
+
+
+                        </div>
+
+                        <a (click)="submit2()" class="btn btn-info " form="createForm2">{{
+                                'Add'
+                                }}</a>
+
+
+
+                        <br><br><br><br>
+
+
+                        <div class="col-md-5">
+                                <div id="input-container">
+
+                                        <h3>Add Skills</h3>
+                                        <div class="d-flex justify-content-between align-items-center experience">
+                                                <button class="d-flex justify-content-between align-items-center experience"
+                                                        (click)="addInputField()">Add Input Field</button>
+                                        </div><br>
+                                        <div>
+
+                                                <form role="form" id="createForm" (ngSubmit)="submit()"
+                                                        [formGroup]="form">
+
+
+                                                        <div class="form-content">
+
+
+                                                                <div class="form-group">
+                                                                        <input placeholder="Add skill" class="form-control input-underline input-lg"
+                                                                                type="text"
+                                                                                formControlName="skillone" />
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-group">
+                                                                        <input  placeholder="Add skill" class="form-control input-underline input-lg"
+                                                                                type="text"
+                                                                                formControlName="skillone" />
+                                                                </div>
+                                                                <br>
+
+
+                                                        </div>
+
+                                                </form>
+                                        </div>
+
+
+
+
+
+
+
+
+                                        <!-- <div class="col-md-12"><label class="labels">Additional Details</label><input type="text"
+                                        class="form-control" placeholder="additional details" value=""></div> -->
+                                </div>
+
+                                <a (click)="submit()" class="btn btn-info " form="createForm">{{
+                                        'Add'
+                                        }}</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                </div>
+
+
+
+
+                <br>
+                <br>
