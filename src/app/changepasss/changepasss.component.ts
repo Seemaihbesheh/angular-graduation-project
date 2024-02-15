@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import { AuthService } from '../layout/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,AbstractControl  } from '@angular/forms';
+
 import { UserStoreService } from '../layout/user-store.service';
 @Component({
   selector: 'app-changepasss',
@@ -19,11 +20,12 @@ export class ChangepasssComponent implements OnInit {
   get f() {
     return this.frm.controls; //will be used in validation
   }
+  passwordMatchError: boolean = false;
 
-
+  passwordMatchgreen: boolean = true;
   public id_login: Number = 0;
 
-
+  passwordMismatch: boolean ;
   public hide: boolean =false;
 
   constructor(private fb: FormBuilder, private service: AuthService, private userStore: UserStoreService) {
@@ -31,7 +33,16 @@ export class ChangepasssComponent implements OnInit {
   }
 
 
+  passwordMatchValidator(control: AbstractControl): { [key: string]: any } | null {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
 
+    if (password.value !== confirmPassword.value) {
+      return { 'mismatch': true };
+    }
+
+    return null;
+  }
 
 
  
@@ -89,14 +100,34 @@ export class ChangepasssComponent implements OnInit {
   funform() {
     this.frm = this.fb.group({
       id: [0],
-      password: [null],
-  
+      password: ['', Validators.required],
+      
+      confirmpassword: ['', Validators.required],
     })
 
   }
 
 
 
+
+  submitForm() {
+    if (this.frm.valid) {
+      const password = this.frm.get('password').value;
+      const confirmPassword = this.frm.get('confirmpassword').value;
+
+      if (password === confirmPassword) {
+        this.passwordMatchError = false;
+       this.passwordMatchgreen=false;
+        console.log('Passwords match');
+
+      } 
+     else {
+      this.passwordMatchError = true;
+   
+  
+    }
+  }
+  }
 
   
   showPass() {

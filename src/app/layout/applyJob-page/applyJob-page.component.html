@@ -1,123 +1,194 @@
 <div [@routerTransition]>
 
 
-    <br>
+
+
+<!--  
+    <p>print what </p>
+
+    <div>
+      <p>Job id  paresing== {{usertest.id}} </p>
+
+    </div> -->
+
+
+
     <div class="row">
         <div class="col-md-3">
-            <div class="input-field">
-                <input [(ngModel)]="textSEARCHcity" type="text" placeholder="search by city">
-                <button (click)="confirmTosendCity()" class="clibkbtnn" type="button">
-                    <span class="spanclivk">&#8594;</span>
-                </button>
+            <div class="input-field flex-container2">
+           
+                    <select name="items" (change)="onItemSelected($event.target.value)">
+                        <option>Search By</option>
+                        <option *ngFor="let item of items" [value]="item.field">{{ item.field }}</option>
+                    </select>
+
+                    <input [(ngModel)]="letsSearch" type="text" placeholder="Enter Text">
+
+                    <button (click)="confirmletsSearch()" type="button">
+                        <span class="click-span">&#8594;</span>
+                    </button>
+              
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="input-field">
-                <input [(ngModel)]="NameSEARCH" type="text" placeholder="search by Name">
-                <button (click)="confirmTosendName()" type="button" class="clibkbtnn">
-                    <span class="spanclivk">&#8594;</span>
-                </button>
-            </div>
+
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <div class="input-field flex-container2">
+            <input [(ngModel)]="pdfSearch" type="text" placeholder="search inside pdf">
+            <button style="width: 22%;" type="button" class="btn btn-outline-success"
+                (click)="searchPdf()">search</button>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col-md-3">
-            <div class="input-field">
-                <input [(ngModel)]="cvSEARCH" type="text" placeholder="search by cv">
-                <button (click)="confirmTosendcv()" type="button" class="clibkbtnn">
-                    <span class="spanclivk">&#8594;</span>
-                </button>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="input-field">
-                <input [(ngModel)]="emailSEARCH" type="text" placeholder="search by email">
-                <button (click)="confirmTosendemail()" type="button" class="clibkbtnn">
-                    <span class="spanclivk">&#8594;</span>
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-3">
-            <div class="input-field">
-                <input [(ngModel)]="pdfSearch" type="text" placeholder="search inside pdf">
-                <button style="width: 22%;" type="button" class="btn btn-outline-success" (click)="searchPdf()">
-                    search
-                </button>
-            </div>
-        </div>
-    </div>
+</div>
+
+<br><br>
+
+
+<div class="card mb-3">
     <br><br>
 
+    <table class="card-body table table-hover">
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>CV file</th>
+                <th>Phone Number</th>
+                <th>gpa </th>
 
-    <div class="card mb-3">
-        <br><br>
+                <th>Accept</th>
 
-        <table class="card-body table table-hover">
-            <thead>
-                <tr>
-                    <th>Job ID </th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>City</th>
-                    <th>CV file</th>
-                    <th>Phone Number</th>
-                    <th>gpa </th>
 
-                    <th>Accept</th>
-                    <th>reject</th>
-
-                </tr>
-            </thead>
+            </tr>
+        </thead>
 
 
 
 
 
-            <tbody *ngFor="let job of AppyJobs ">
-                <tr>
+        <tbody *ngFor="let user of AppyJobs ">
+            <tr>
 
 
-                    <td>{{job.pushJob.id}}</td>
-                    <td>{{job.full_Name}}</td>
-                    <td>{{job.email}}</td>
-                    <td>{{job.city}}</td>
-                    <td> <a href="{{job.productImage}}" target="_blank">
-                            {{job.fileDisplayName}}
+                <td>{{user.pushJob.pre_title}}</td>
+                <td>{{user.full_Name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.city}}</td>
 
-                        </a> </td>
-                    <td> {{job.phone_Number}}</td>
-                    <td>{{job.gpa}}</td>
+                <td>
 
 
-
-                  <td> <button  type="button" class="btn btn-outline-success"(click)="confirmTosend()" > Accept</button>  </td>  
-
-                    <!-- <td><button type="button" class="btn btn-outline-success">Add</button> </td> -->
-                    <!-- <td><button type="button" class="btn btn-danger"  (click)="confirmTodelete()" style="background-color: red;">Delete</button>
-                    </td> -->
-                    <td><button  type="button" class="btn btn-danger"   style="background-color: red;">Reject</button>
-                    </td>
-                </tr>
+                    <select name="items" (change)="onItemSelectedstatusS($event.target.value, user.email)">
+                        <option>Status</option>
+                        <option *ngFor="let item of status" [value]="item.field">{{ item.field }}</option>
+                    </select>
 
 
-            </tbody>
-        </table>
-    </div>
+                </td>
 
+                <td> <a href="{{user.productImage}}" target="_blank">
+                        {{user.fileDisplayName}}
+
+                    </a> </td>
+                <td> 0{{user.phone_Number}}</td>
+                <td>{{user.gpa}}</td>
+
+
+
+                <td> <button type="button" class="btn btn-outline-success" (click)="confirmTosend()">
+                        Accept</button> </td>
+
+
+
+
+        </tbody>
+    </table>
 </div>
 
 
+
+
 <br>
 <br>
 
+<h2>All Aprroved</h2>
+<table class="card-body table table-hover">
+    <thead>
+        <tr>
 
-<button type="submit">
-    <svg viewBox="0 0 24 24">
-      <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l4.25 4.25a1 1 0 0 0 1.41-1.41L15.5 14zm-6 0a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z"/>
-      <path d="M0 0h24v24H0z" fill="none"/>
-    </svg>
-  </button>
+            <th>Email</th>
+
+            <th>Status</th>
+
+
+
+        </tr>
+    </thead>
+
+
+
+
+
+    <tbody *ngFor="let userapprove of approvedUser ">
+        <tr>
+
+
+
+            <td>{{userapprove.emailUser}}</td>
+
+            <td>Approve</td>
+
+
+
+
+
+
+
+    </tbody>
+</table>
+
+
+<br><br>
+
+<h2>All Rejcted</h2>
+<table class="card-body table table-hover">
+    <thead>
+        <tr>
+
+            <th>Email</th>
+
+            <th>Status</th>
+
+
+
+        </tr>
+    </thead>
+
+
+
+
+
+    <tbody *ngFor="let userreject of rejectedUser ">
+        <tr>
+
+
+
+            <td>{{userreject.emailUser}}</td>
+
+            <td>Reject</td>
+
+
+
+
+
+
+
+    </tbody>
+</table>

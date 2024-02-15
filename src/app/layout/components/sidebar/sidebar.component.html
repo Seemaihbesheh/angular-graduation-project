@@ -1,347 +1,70 @@
 
-<!-- <ng-container *ngIf="role === 'user'">  -->
 
-<nav   [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }" class="sidebar">
-    <div class="list-group">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-**********" crossorigin="anonymous" />
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-**********" crossorigin="anonymous" />
 
 
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
-            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
-            <span>{{ ' Home |الصفحة الرئيسية' | translate }}</span>
-        </a>
+<ng-container *ngIf="role === 'user'"> 
 
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/employee-page']" class="list-group-item">
-            <i class="fa fa-file-o"></i>&nbsp;
-            <span>{{ 'Employee Page(info)' | translate }}</span>
-        </a>
-
-
-        
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/editemployee-page']" class="list-group-item">
-            <i class="fa fa-file-o"></i>&nbsp;
-            <span>{{ 'Edit Employee' | translate }}</span>
-        </a>
-
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/edit_admin']" class="list-group-item">
-            <i class="fa fa-file-o"></i>&nbsp;
-            <span>{{ 'Edit Admin' | translate }}</span>
-        </a>
-       
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/findjob-page']" class="list-group-item">
-            <i class="fa fa-file-o"></i>&nbsp;
-            <span>{{ 'Find Job (table Push job)' | translate }}</span>
-        </a>
-
-        
-
-       
-
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/cv-page']" class="list-group-item">
-            <i class="fa fa-file-o"></i>&nbsp;
-            <span>{{ 'CV create' | translate }}</span>
-        </a>
-
-
-
-          
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/company-page']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'Company Page(info)' | translate }}</span>
-            </a>
-
-
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/admin-page']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'Admin Page(info)' | translate }}</span>
-            </a>
-           
-
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/blank-page']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ ' Chat :blank page' | translate }}</span>
-            </a>
-
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/addcompany-page']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'add company-page' | translate }}</span>
-            </a>
-        
-
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/editcompany-page']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'Edit Company' | translate }}</span>
-            </a>
-
-           
-    
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/apply-job']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'who apply to Job' | translate }}</span>
-            </a>
-    
-    
-    
-
-    
-            <!-- <a [routerLinkActive]="['router-link-active']" [routerLink]="['/signupcompany']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'signup company' | translate }}</span>
-            </a>
-     -->
-            <!-- <a [routerLinkActive]="['router-link-active']" [routerLink]="['/create-job']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'Create job' | translate }}</span>
-            </a>
-     -->
-    
-        
-           <a [routerLinkActive]="['router-link-active']" [routerLink]="['/createPushjob-page']" class="list-group-item">
-            <i class="fa fa-file-o"></i>&nbsp;
-            <span>{{ 'create Pushjob page' | translate }}</span>
-        </a>
-    
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/charts']" class="list-group-item">
-             
-                <span>{{ 'Charts' | translate }}</span>
-            </a>
-    
-    
-    
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/tables']" class="list-group-item">
-              
-                <span>{{ 'الجداول' | translate }}</span>
-            </a>
-    
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/findjob-page']" class="list-group-item">
-                <i class="fa fa-file-o"></i>&nbsp;
-                <span>{{ 'Find Job (table Push job)' | translate }}</span>
-            </a>
-    
-          
-    
-
-
-
-       
-
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/charts']" class="list-group-item">
-         
-            <span>{{ 'Charts' | translate }}</span>
-        </a>
-
-
-
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/tables']" class="list-group-item">
-          
-            <span>{{ 'الجداول' | translate }}</span>
-        </a>
-
-
-
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/homepost']" class="list-group-item">
-         
-            <span>{{ " front Post"}}</span>
-        </a>
-
-
-
-
-
-
-
-        <div class="nested-menu">
-            <a (click)="addExpandClass('pages')" class="list-group-item">
-                <i class="fa fa-plus"></i>&nbsp;
-                <span>{{ 'Menu' | translate }}</span>
-            </a>
-            <li [class.expand]="showMenu === 'pages'" class="nested">
-                <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div>
-
-
-
-
-
-
-
-        <a class="list-group-item" href="http://www.strapui.com/">
-            <i class="fa fa-caret-down"></i>&nbsp;
-            <span>{{ 'More Themes' | translate }}</span>
-        </a>
-
-        <div class="header-fields">
-            <a (click)="rltAndLtr()" class="list-group-item">
-                <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
-            </a>
-            <div class="nested-menu">
-                <a (click)="addExpandClass('languages')" class="list-group-item">
-                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
-                </a>
-                <li [class.expand]="showMenu === 'languages'" class="nested">
-                    <ul class="submenu">
-                        <li>
-                            <a (click)="changeLang('en')" href="javascript:void(0)">
-                                {{ 'English' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="changeLang('fr')" href="javascript:void(0)">
-                                {{ 'French' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="changeLang('ur')" href="javascript:void(0)">
-                                {{ 'Urdu' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="changeLang('es')" href="javascript:void(0)">
-                                {{ 'Spanish' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="changeLang('it')" href="javascript:void(0)">
-                                {{ 'Italian' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="changeLang('fa')" href="javascript:void(0)">
-                                {{ 'Farsi' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="changeLang('de')" href="javascript:void(0)">
-                                {{ 'German' | translate }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </div>
-            <div class="nested-menu">
-                <a (click)="addExpandClass('profile')" class="list-group-item">
-                    <span><i class="fa fa-user"></i>&nbsp; John Smith</span>
-                </a>
-                <li [class.expand]="showMenu === 'profile'" class="nested">
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a (click)="onLoggedout()" [routerLink]="['/login']">
-                                <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </div>
-        </div>
-    </div>
-    <div style="background-color: #121421;"  (click)="toggleCollapsed()" [ngClass]="{ collapsed: collapsed }" class="toggle-button">
-        <i style="background-color: #121421;" class="fa fa-fw fa-angle-double-{{ collapsed ? 'right' : 'left' }}"></i>&nbsp;
-        <span style="background-color: #121421;">{{ 'Collapse Sidebar' | translate }}</span>
-    </div>
-</nav>
-
-<!-- </ng-container> -->
-
-
-
-
-
-
-
-<!-- 
-<ng-container *ngIf="role === 'company'">  -->
-
-    <!-- <nav   [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }" class="sidebar">
+    <nav   [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }" class="sidebar">
         <div class="list-group">
     
     
     
-    
             <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
-                <i class="fa fa-fw fa-dashboard"></i>&nbsp;
-                <span>{{ ' Homeالصفحة الرئيسية' | translate }}</span>
+                <i class="fas fa-home"></i>&nbsp;
+
+                <span>{{ ' Home' | translate }}</span>
+            </a>
+    
+            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/employee-page']" class="list-group-item">
+                <i class="fas fa-user"></i>&nbsp;
+                <span>{{ 'Employee Page(info)' | translate }}</span>
+            </a>
+    
+            
+            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/editemployee-page']" class="list-group-item">
+                <i class="fas fa-edit"></i> &nbsp;
+                <span>{{ 'Edit Employee' | translate }}</span>
+            </a>
+    
+     
+    
+            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/cv-page']" class="list-group-item">
+                <i class="fas fa-plus"></i>&nbsp;
+                <span>{{ 'CV create' | translate }}</span>
             </a>
     
     
     
-            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/homepost']" class="list-group-item">
-             
-                <span>{{ " front Post"}}</span>
-            </a>
+              
+               
+    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/alllCom-page']" class="list-group-item">
+        <i class="fas fa-building"></i>&nbsp;
+        <span>{{ ' All Companies' | translate }}</span>
+    </a>
     
+      
     
-    
-    
-     -->
-    
-<!--     
-            <div class="nested-menu">
-                <a (click)="addExpandClass('pages')" class="list-group-item">
-                    <i class="fa fa-plus"></i>&nbsp;
-                    <span>{{ 'Menu' | translate }}</span>
+                <a type="button" [routerLinkActive]="['router-link-active']" [routerLink]="['/userapply-job',  id_login]" class="list-group-item">
+                    <i class="fas fa-archive"></i>&nbsp;
+                    <span>{{ 'Archive User Jobs' | translate }}</span>
                 </a>
-                <li [class.expand]="showMenu === 'pages'" class="nested">
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-monument"></i>&nbsp;
-                                <span>{{ 'Submenu' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-monument"></i>&nbsp;
-                                <span>{{ 'Submenu' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-monument"></i>&nbsp;
-                                <span>{{ 'Submenu' | translate }}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </div>
-    
-    
-    
+      
+                
+        
+                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/findjob-page']" class="list-group-item">
+                    <i class="fas fa-search"></i> &nbsp;
+                    <span>{{ 'Find Job ' | translate }}</span>
+                </a>
+        
+            
+        
+                <!-- <a [routerLinkActive]="['router-link-active']" [routerLink]="['/blank-page']" class="list-group-item">
+                    <i class="fas fa-comment"></i> &nbsp;
+                    <span>{{ ' Chat ' | translate }}</span>
+                </a> -->
     
     
     
@@ -371,8 +94,8 @@
                                     {{ 'French' | translate }}
                                 </a>
                             </li>
-                            <li> -->
-                                <!-- <a (click)="changeLang('ur')" href="javascript:void(0)">
+                            <li>
+                                <a (click)="changeLang('ur')" href="javascript:void(0)">
                                     {{ 'Urdu' | translate }}
                                 </a>
                             </li>
@@ -401,7 +124,7 @@
                 </div>
                 <div class="nested-menu">
                     <a (click)="addExpandClass('profile')" class="list-group-item">
-                        <span><i class="fa fa-user"></i>&nbsp; John Smith</span>
+                        <span><i class="fa fa-user"></i>&nbsp; </span>
                     </a>
                     <li [class.expand]="showMenu === 'profile'" class="nested">
                         <ul class="submenu">
@@ -414,8 +137,8 @@
                                 <a href="javascript:void(0)">
                                     <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
                                 </a>
-                            </li> -->
-                            <!-- <li>
+                            </li>
+                            <li>
                                 <a href="javascript:void(0)">
                                     <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
                                 </a>
@@ -429,11 +152,328 @@
                     </li>
                 </div>
             </div>
-        </div> -->
-        <!-- <div style="background-color: #121421;"  (click)="toggleCollapsed()" [ngClass]="{ collapsed: collapsed }" class="toggle-button">
+        </div>
+        <div style="background-color: #121421;"  (click)="toggleCollapsed()" [ngClass]="{ collapsed: collapsed }" class="toggle-button">
             <i style="background-color: #121421;" class="fa fa-fw fa-angle-double-{{ collapsed ? 'right' : 'left' }}"></i>&nbsp;
             <span style="background-color: #121421;">{{ 'Collapse Sidebar' | translate }}</span>
         </div>
     </nav>
     
-    </ng-container> -->
+    </ng-container>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <ng-container *ngIf="role === 'company'">  
+    
+        <nav   [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }" class="sidebar">
+            <div class="list-group">
+        
+        
+        
+                <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
+           <i class="fas fa-home"></i>&nbsp;
+                    <span>{{ ' Home' | translate }}</span>
+                </a>
+        
+               
+                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/company-page']" class="list-group-item">
+                    <i class="fas fa-user"></i>&nbsp;
+                    <span>{{ 'Company Page' | translate }}</span>
+                </a>
+             
+    
+                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/editcompany-page']" class="list-group-item">
+                    <i class="fas fa-edit"></i> &nbsp;
+                    <span>{{ 'Edit Company' | translate }}</span>
+                </a>
+                  
+                   
+        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/alllCom-page']" class="list-group-item">
+            <i class="fa fa-building"></i>&nbsp;
+            <span>{{ ' All Companies' | translate }}</span>
+        </a>
+        
+        
+                   
+          <a [routerLinkActive]="['router-link-active']" [routerLink]="['/findjobCompany-page']" class="list-group-item">
+            <i class="fas fa-briefcase"></i>
+&nbsp;
+            <span>{{ 'My Jobs ' | translate }}</span>
+        </a>
+ 
+ <a [routerLinkActive]="['router-link-active']" [routerLink]="['/createPushjob-page']" class="list-group-item">
+    <i class="fas fa-plus"></i>&nbsp;
+            <span>{{ 'create Job' | translate }}</span>
+        </a>
+        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/blank-page']" class="list-group-item">
+            <i class="fas fa-comment"></i> &nbsp;
+            <span>{{ ' Chat ' | translate }}</span>
+        </a>
+            
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/findjob-page']" class="list-group-item">
+                        <i class="fas fa-list"></i>&nbsp;
+                        <span>{{ 'All Jobs ' | translate }}</span>
+                    </a>
+            
+                
+<!--             
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/blank-page']" class="list-group-item">
+                        <i class="fa fa-file-o"></i>&nbsp;
+                        <span>{{ ' Chat :blank page' | translate }}</span>
+                    </a> -->
+        
+        
+        
+        
+                <a class="list-group-item" href="http://www.strapui.com/">
+                    <i class="fa fa-caret-down"></i>&nbsp;
+                    <span>{{ 'More Themes' | translate }}</span>
+                </a>
+        
+                <div class="header-fields">
+                    <a (click)="rltAndLtr()" class="list-group-item">
+                        <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
+                    </a>
+                    <div class="nested-menu">
+                        <a (click)="addExpandClass('languages')" class="list-group-item">
+                            <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
+                        </a>
+                        <li [class.expand]="showMenu === 'languages'" class="nested">
+                            <ul class="submenu">
+                                <li>
+                                    <a (click)="changeLang('en')" href="javascript:void(0)">
+                                        {{ 'English' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('fr')" href="javascript:void(0)">
+                                        {{ 'French' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('ur')" href="javascript:void(0)">
+                                        {{ 'Urdu' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('es')" href="javascript:void(0)">
+                                        {{ 'Spanish' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('it')" href="javascript:void(0)">
+                                        {{ 'Italian' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('fa')" href="javascript:void(0)">
+                                        {{ 'Farsi' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('de')" href="javascript:void(0)">
+                                        {{ 'German' | translate }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="nested-menu">
+                        <a (click)="addExpandClass('profile')" class="list-group-item">
+                            <span><i class="fa fa-user"></i>&nbsp; </span>
+                        </a>
+                        <li [class.expand]="showMenu === 'profile'" class="nested">
+                            <ul class="submenu">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fas fa-user"></i> {{ 'Profile' | translate }}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="onLoggedout()" [routerLink]="['/login']">
+                                        <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: #121421;"  (click)="toggleCollapsed()" [ngClass]="{ collapsed: collapsed }" class="toggle-button">
+                <i style="background-color: #121421;" class="fa fa-fw fa-angle-double-{{ collapsed ? 'right' : 'left' }}"></i>&nbsp;
+                <span style="background-color: #121421;">{{ 'Collapse Sidebar' | translate }}</span>
+            </div>
+        </nav>
+        
+        
+    </ng-container>
+
+
+
+
+    
+    <ng-container *ngIf="role === 'admin'">  
+    
+        <nav   [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }" class="sidebar">
+            <div class="list-group">
+        
+        
+        
+                <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
+                    <i class="fas fa-home"></i>&nbsp;
+                    <span>{{ ' Home' | translate }}</span>
+                </a>
+        
+               
+                   
+        
+        
+        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/admin-page']" class="list-group-item">
+            <i class="fas fa-user"></i>&nbsp;
+            <span>{{ 'Admin Page(info)' | translate }}</span>
+        </a>
+        
+             
+        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/edit_admin']" class="list-group-item">
+            <i class="fas fa-edit"></i> &nbsp;
+            <span>{{ 'Edit Admin' | translate }}</span>
+        </a>
+
+ <a [routerLinkActive]="['router-link-active']" [routerLink]="['/charts']" class="list-group-item">
+    <i class="fas fa-chart-bar"></i> &nbsp;
+                <span>{{ 'Charts' | translate }}</span>
+            </a> 
+    
+            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/findjob-page']" class="list-group-item">
+                <i class="fas fa-list"></i>&nbsp;
+                <span>{{ 'All Jobs ' | translate }}</span>
+            </a>
+    
+            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/addcompany-page']" class="list-group-item">
+                <i class="fas fa-pencil-alt"></i>&nbsp;
+                <span>{{ 'Add company' | translate }}</span>
+            </a>
+            <a [routerLinkActive]="['router-link-active']" [routerLink]="['/companytable-page']" class="list-group-item">
+                <i class="fas fa-user"></i>&nbsp;
+                <span>{{ 'Table' | translate }}</span>
+            </a>
+            
+
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/alllCom-page']" class="list-group-item">
+                        <i class="far fa-list-alt"></i>&nbsp;
+            <span>{{ ' All Companies' | translate }}</span>
+        </a>
+            
+
+        
+                <a class="list-group-item" href="http://www.strapui.com/">
+                    <i class="fa fa-caret-down"></i>&nbsp;
+                    <span>{{ 'More Themes' | translate }}</span>
+                </a>
+        
+                <div class="header-fields">
+                    <a (click)="rltAndLtr()" class="list-group-item">
+                        <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
+                    </a>
+                    <div class="nested-menu">
+                        <a (click)="addExpandClass('languages')" class="list-group-item">
+                            <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
+                        </a>
+                        <li [class.expand]="showMenu === 'languages'" class="nested">
+                            <ul class="submenu">
+                                <li>
+                                    <a (click)="changeLang('en')" href="javascript:void(0)">
+                                        {{ 'English' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('fr')" href="javascript:void(0)">
+                                        {{ 'French' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('ur')" href="javascript:void(0)">
+                                        {{ 'Urdu' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('es')" href="javascript:void(0)">
+                                        {{ 'Spanish' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('it')" href="javascript:void(0)">
+                                        {{ 'Italian' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('fa')" href="javascript:void(0)">
+                                        {{ 'Farsi' | translate }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="changeLang('de')" href="javascript:void(0)">
+                                        {{ 'German' | translate }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="nested-menu">
+                        <a (click)="addExpandClass('profile')" class="list-group-item">
+                            <span><i class="fa fa-user"></i>&nbsp;</span>
+                        </a>
+                        <li [class.expand]="showMenu === 'profile'" class="nested">
+                            <ul class="submenu">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a (click)="onLoggedout()" [routerLink]="['/login']">
+                                        <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: #121421;"  (click)="toggleCollapsed()" [ngClass]="{ collapsed: collapsed }" class="toggle-button">
+                <i style="background-color: #121421;" class="fa fa-fw fa-angle-double-{{ collapsed ? 'right' : 'left' }}"></i>&nbsp;
+                <span style="background-color: #121421;">{{ 'Collapse Sidebar' | translate }}</span>
+            </div>
+        </nav>
+        
+        
+    </ng-container>

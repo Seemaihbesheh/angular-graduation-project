@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { ChartData, ChartType } from "chart.js";
+import { Chart, ChartData, ChartType } from "chart.js";
 import { PizzaDataService } from '../pizza-data.service';
+import { tableService } from '../companytable-page/AdmainCompany.service';
+//import { tableService } from '../blank-page/AdmainCompany.service';
 @Component({
     selector: 'app-charts',
     templateUrl: './charts.component.html',
@@ -13,9 +15,12 @@ export class ChartsComponent implements OnInit {
     
 //htis isss important 
 /////////////////////////////get from back enddd
+chart: any;
     pizzaArray:any[]=[];
     err:string="";
-    constructor(private _PizzaDataService: PizzaDataService){
+    constructor(private _PizzaDataService: PizzaDataService,
+        private serviceChart: tableService
+        ){
     
       this._PizzaDataService.getPizza().subscribe({
         next:(result)=>{this.pizzaArray=result.data.recipes},
@@ -161,6 +166,7 @@ export class ChartsComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.GetChart();
         this.barChartType = 'bar';
         this.barChartLegend = true;
         // this.doughnutChartType = 'doughnut';
@@ -171,4 +177,33 @@ export class ChartsComponent implements OnInit {
         this.lineChartLegend = true;
         this.lineChartType = 'line';
     }
+
+
+    private GetChart(){
+
+        this.serviceChart.Getchart().subscribe(data => {
+            const labels = data.map(item => item.companysName);
+            const counts = data.map(item => item.jpbsCount);
+      
+            this.chart = new Chart('canvas', {
+              type: 'bar',
+              data: {
+                labels: labels,
+                datasets: [{
+                  label: 'عددالطلبات',
+                  data: counts,
+                  backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                }]
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+          });
+        }
+
 }

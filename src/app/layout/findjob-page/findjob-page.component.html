@@ -10,6 +10,10 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
+
+
+<br>
+
 <div class="container">
     <div class="row text-center justify-content-center mb-5">
         <div class="col-xl-6 col-lg-8">
@@ -18,6 +22,27 @@
                 We wish you good luck.</p>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="row">
         <div class="col">
@@ -74,45 +99,38 @@
     <button (click)="confirmTosendTitle()" type="button" class="clibkbtnn">
         <span class="spanclivk">&#8594;</span>
     </button>
+    <br><br>
+
+    <input [(ngModel)]="requirmentSEARCH" type="text" placeholder="search by requirment">
+    <button (click)="confirmTosendcomapnyrequirment()" type="button" class="clibkbtnn">
+        <span class="spanclivk">&#8594;</span>
+    </button>
+
+    <br><br>
+
+    <input [(ngModel)]="EmailSEARCH" type="text" placeholder="search by Email">
+    <button (click)="confirmTosendcomapnyEmail()" type="button" class="clibkbtnn">
+        <span class="spanclivk">&#8594;</span>
+    </button>
 <br><br>
 
-<input [(ngModel)]="requirmentSEARCH" type="text" placeholder="search by requirment">
-<button (click)="confirmTosendcomapnyrequirment()" type="button" class="clibkbtnn">
-    <span class="spanclivk">&#8594;</span>
-</button>
 
-<br><br>
-
-<input [(ngModel)]="EmailSEARCH" type="text" placeholder="search by Email">
-<button (click)="confirmTosendcomapnyEmail()" type="button" class="clibkbtnn">
-    <span class="spanclivk">&#8594;</span>
-</button>
-
-
-    <div class="row text-center justify-content-center mb-3">
-        <div class="col-xl-15 col-lg-9">
-            <button *ngIf="!red" (click)="checktime()" type="button"
-            >
-              <i class="fa fa-pencil"></i> check Time
-          </button>
-        
-           
-        </div>
-    </div>
-
-</div>
-
-    
+    <button (click)="sortJobDeadlineDescending()" type="button" class="clibkbtnn">
+        sort by Puplish Date
+    </button>
 
 
    
-    
-                    <!-- //i must 1- add company role for this buuton
+
+</div>
+
+
+
+
+
+
+<!-- //i must 1- add company role for this buuton
                                    -->
-  
-
-
-
 
 <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
 
@@ -121,189 +139,199 @@
     <div class="row">
 
 
-
-
-
-
-
-                    <!-- //i must 1- add company role for this hh  and mm card 
-                                  2-chack time button 
-                                  3-and for apply now  -->
-
-
-                                  
-
-        <div      class="col-sm-6 col-md-6  mb-3">
-            <div   [style.background-color]="red ? 'red' : (red2 ? 'red' : null)"class="card">
-                <div class="card-body">
-
-
-
-                  
-                
-                    <div class="d-flex align-items-center position-relative pb-3">
-                        <div class="flex-1 ms-3">
-                            <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">hhh </a>
-                            </h5>
-                            <span class="badge badge-soft-success mb-0"> id  == 1</span>
-                            <p style=" margin-left: 0.6em; padding: 0 1em 1em 0;"></p> 
-                          
-                             <!-- <span class="badge badge-soft-success mb-0"> job_Deadline = {{date1}}</span>  -->
-                             <span class="badge badge-soft-success mb-0"> job_Deadline = 2023-03-10T07:07:00 GMT+0200 (Eastern European Standard Time)</span> 
-                            <br>
-                            <span>  hhh </span>
-
-                        </div>
-                    </div>
-
-                    <p> Description :</p>
-
-                    <p> hhh</p>
-                    <p> Requirment :</p>
-
-                        <p> hhh</p> 
-                    
-                        
-                        <!-- <p *ngIf="flag"> testt</p> -->
-
-                    <p class="text-muted mb-0 mt-2"><i
-                        class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>hhh</p>
-                <p class="text-muted mb-0 mt-2"><i
-                        class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> hhh</p>
-
-                   
-                    <!-- END : Options buttons  -->
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div      class="col-sm-6 col-md-6  mb-3">
-            <div   [style.background-color]="red ? 'red' : (red2 ? 'red' : null)"class="card">
-                <div class="card-body">
-
-
-
-                
-                    <div class="d-flex align-items-center position-relative pb-3">
-                        <div class="flex-1 ms-3">
-                            <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">mm </a>
-                            </h5>
-                            <span class="badge badge-soft-success mb-0"> id  == 2</span>
-                            <p style=" margin-left: 0.6em; padding: 0 1em 1em 0;"></p> 
-                             <span class="badge badge-soft-success mb-0"> job_Deadline = 2023-03-10T07:07:00 GMT+0200 (Eastern European Standard Time)</span> 
-                            <br>
-                            <span>  mmm </span>
-
-                        </div>
-                    </div>
-
-                    <p> Description :</p>
-
-                    <p> mm</p>
-                    <p> Requirment :</p>
-
-                        <p> mm</p>
-                    
-                        
-                        <!-- <p *ngIf="flag"> testt</p> -->
-
-                     <p class="text-muted mb-0 mt-2"><i
-                        class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>m</p>
-                <p class="text-muted mb-0 mt-2"><i
-                        class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> m</p> 
-
-                   
-                
-
-                </div>
-            </div>
-        </div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-        <div   *ngFor="let job of pushJob"    class="col-sm-6 col-md-6  mb-3">
+        <div  class="col-sm-6 col-md-6  mb-3">
             <div class="card">
                 <div class="card-body">
 
 
 
-                  
+
+                    <!-- Profile picture and short information -->
+                    <div class="d-flex align-items-center position-relative pb-3">
+                        <div class="flex-1 ms-3">
+                            <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Angular Postion </a>
+                            </h5>
+                            <span class="badge badge-soft-success mb-0"> Job id == 7</span>
+                            <p style=" margin-left: 0.6em; padding: 0 1em 1em 0;"></p>
+
+
+
+
+                            <span class="badge badge-soft-success mb-0"> Puplish Date = 
+                                2023-05-01T00:00:00 GMT+0200 (Eastern European Standard Time)</span>
+
+                            <span class="badge badge-soft-danger mb-0"> job_Deadline =   2023-01-10T07:07:00 GMT+0200 (Eastern European Standard Time)</span>
+
+                            <!-- <span class="badge badge-soft-success mb-0"> job_Deadline = {{   date1 }}</span>  -->
+                            <br>
+                            <span> Company: Asal </span>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <p> Description :</p>
+
+                    <p> Angular :html,css,js</p>
+                    <p> Requirment :</p>
+
+                    <p> Know js  and ts</p>
+
+
+                    <!-- <p *ngIf="flag"> testt</p> -->
+
+                    <p class="text-muted mb-0 mt-2"><i
+                            class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i></p>
+                    <p class="text-muted mb-0 mt-2"><i
+                            class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> Nablus
+                    </p>
+
+                    <!-- Options buttons -->
+                    <div class="mt-3 pt-2 text-center border-top">
+                        <div class="d-flex justify-content-center gap-3">
+
+
+                            <!-- <p> comapny id: {{ job.company.id}}</p> -->
+
+                            <!-- <div>
+                                <a class="btn btn-sm btn-info btn-outline-light btn-lg"
+                                 [routerLink]="['/company-page',  job.company.id  ]" >  
+                                   <i class="fa fa-pencil" aria-hidden="true"></i>Company Profile </a>
+                            </div> -->
+
+
+                            <!-- <a href="#" class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>Company Profile
+                            </a> -->
+
+                            <a  type="button"
+                                class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil"></i> Company Profile
+                            </a>
+
+
+                            <a (click)="scroll(target)" type="button"
+                                class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil"></i> Apply now
+                            </a>
+
+                            <a [routerLink]="['/blank-page']"   type="button"
+                            class="btn btn-sm btn-info btn-outline-light btn-lg">
+                             Chat
+                        </a>
+
+
+
+
+                            <!-- <a [routerLink]="['/apply-jobs', job.id  ]" type="button"
+                                class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil"></i> View how apply
+                            </a> -->
+                        </div>
+                    </div>
+                    <!-- END : Options buttons -->
+
+                </div>
+            </div>
+        </div>
+
+        <div *ngFor="let job of pushJob" class="col-sm-6 col-md-6  mb-3">
+            <div class="card">
+                <div class="card-body">
+
+
+
+
                     <!-- Profile picture and short information -->
                     <div class="d-flex align-items-center position-relative pb-3">
                         <div class="flex-1 ms-3">
                             <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">{{ job.pre_title }} </a>
                             </h5>
-                            <span class="badge badge-soft-success mb-0"> id  == {{job.id }}</span>
-                            <p style=" margin-left: 0.6em; padding: 0 1em 1em 0;"></p> 
+                            <span class="badge badge-soft-success mb-0"> Job id == {{job.id }}</span>
+                            <p style=" margin-left: 0.6em; padding: 0 1em 1em 0;"></p>
 
-                            <span class="badge badge-soft-success mb-0"> job_Deadline = {{ job.job_Deadline }}  GMT+0200 (Eastern European Standard Time)</span>
-                          
-                             <!-- <span class="badge badge-soft-success mb-0"> job_Deadline = {{   date1 }}</span>  -->
+
+
+
+                            <span class="badge badge-soft-success mb-0"> Puplish Date = {{ job.job_PuplishDate }}
+                                GMT+0200
+                                (Eastern European Standard Time)</span>
+
+                            <span class="badge badge-soft-danger mb-0"> job_Deadline = {{ job.job_Deadline }} GMT+0200
+                                (Eastern European Standard Time)</span>
+
+                            <!-- <span class="badge badge-soft-success mb-0"> job_Deadline = {{   date1 }}</span>  -->
                             <br>
-                            <span>  {{ job.title }} </span>
+                            <span> Company: {{ job.title }} </span>
 
                         </div>
                     </div>
+
+
+
+
 
                     <p> Description :</p>
 
                     <p> {{ job.description }}</p>
                     <p> Requirment :</p>
 
-                        <p> {{ job.requrment }}</p>
-                    
-                        
-                        <!-- <p *ngIf="flag"> testt</p> -->
+                    <p> {{ job.requrment }}</p>
+
+
+                    <!-- <p *ngIf="flag"> testt</p> -->
 
                     <p class="text-muted mb-0 mt-2"><i
-                        class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>{{ job.email }} </p>
-                <p class="text-muted mb-0 mt-2"><i
-                        class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> {{ job.place }}</p>
+                            class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>{{ job.email }} </p>
+                    <p class="text-muted mb-0 mt-2"><i
+                            class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> {{ job.place }}
+                    </p>
 
                     <!-- Options buttons -->
                     <div class="mt-3 pt-2 text-center border-top">
                         <div class="d-flex justify-content-center gap-3">
 
-                         
-                            <a href="#" class="btn btn-sm btn-info btn-outline-light btn-lg">
+
+                            <!-- <p> comapny id: {{ job.company.id}}</p> -->
+
+                            <!-- <div>
+                                <a class="btn btn-sm btn-info btn-outline-light btn-lg"
+                                 [routerLink]="['/company-page',  job.company.id  ]" >  
+                                   <i class="fa fa-pencil" aria-hidden="true"></i>Company Profile </a>
+                            </div> -->
+
+
+                            <!-- <a href="#" class="btn btn-sm btn-info btn-outline-light btn-lg">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>Company Profile
+                            </a> -->
+
+                            <a [routerLink]="['/company-page',  job.company.id  ]" type="button"
+                                class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil"></i> Company Profile
                             </a>
-                            <button (click)="scroll(target)" type="button"
+
+
+                            <a (click)="scroll(target)" type="button"
                                 class="btn btn-sm btn-info btn-outline-light btn-lg">
                                 <i class="fa fa-pencil"></i> Apply now
-                            </button>
+                            </a>
 
 
+                            <a [routerLink]="['/blank-page']"   type="button"
+                            class="btn btn-sm btn-info btn-outline-light btn-lg">
+                             Chat
+                        </a>
 
+
+                          
+
+                            <!-- <a [routerLink]="['/apply-jobs', job.id  ]" type="button"
+                                class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil"></i> View how apply
+                            </a> -->
                         </div>
                     </div>
                     <!-- END : Options buttons -->
@@ -347,28 +375,30 @@
 
 <div class="row">
     <div class="col-lg-6">
-        <form [formGroup]="form" role="form" id="createForm" (ngSubmit)="onPost()" >
+        <form [formGroup]="form" role="form" id="createForm" (ngSubmit)="onPost()">
 
 
             <fieldset class="form-group">
                 <label>Job ID</label>
-                <input type="text" class="form-control" formControlName="pushJobId"/>
+                <input type="text" class="form-control" formControlName="pushJobId" />
                 <div *ngIf="(f['pushJobId'].touched || f['pushJobId'].dirty) && f['pushJobId'].invalid">
-                    <div *ngIf="f['pushJobId'].errors?.['required']" class="text-danger">Id  is required</div>
+                    <div *ngIf="f['pushJobId'].errors?.['required']" class="text-danger">Id is required</div>
                 </div>
             </fieldset>
 
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
             <fieldset class="form-group">
                 <label>Full Name(auto)</label>
-                <input  placeholder="Enter text"  [(ngModel)]="tokenNamestring"  type="text"  class="form-control" formControlName="full_Name">
+                <input placeholder="Enter text" [(ngModel)]="tokenNamestring" type="text" class="form-control"
+                    formControlName="full_Name">
             </fieldset>
 
-             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+            <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
 
             <div class="form-group">
                 <label>Email(auto)</label>
-                <input  placeholder="Enter text"   [(ngModel)]="emailstring" type="text" class="form-control" formControlName="email">
+                <input placeholder="Enter text" [(ngModel)]="emailstring" type="text" class="form-control"
+                    formControlName="email">
             </div>
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
 
@@ -386,14 +416,14 @@
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
             <div class="form-group">
                 <label>Phone Number</label>
-                <input  placeholder="Enter text"  type="text" class="form-control" formControlName="phone_Number">
+                <input placeholder="Enter text" type="text" class="form-control" formControlName="phone_Number">
             </div>
 
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
 
             <fieldset class="form-group">
                 <label>GPA</label>
-                <input  placeholder="Enter text"  type="text" class="form-control" formControlName="gPA">
+                <input placeholder="Enter text" type="text" class="form-control" formControlName="gPA">
 
             </fieldset>
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
@@ -403,7 +433,8 @@
                 <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
                 <div class="mb-3">
                     <input type="file" (change)="onChange($event)" class="form-control">
-                  </div>            </fieldset>
+                </div>
+            </fieldset>
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
             <p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
 
@@ -411,7 +442,7 @@
                 {{status.message}}
             </div>
             <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
-          </form>
+        </form>
     </div>
 
 

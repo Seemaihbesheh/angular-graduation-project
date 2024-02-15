@@ -1,0 +1,207 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+    integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+    integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+
+<p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+
+<div >
+    <div >
+        <button *ngIf="!red" (click)="checktime()" type="button">
+            <i class="fa fa-pencil"></i> check Time
+        </button>
+        <br>
+        <button (click)="sortJobDeadlineDescending()" type="button" >
+            sort by Puplish Date
+        </button>
+        <br>
+        <input [(ngModel)]="titleSEARCH" type="text" placeholder="search by Job Title">
+        <button (click)="confirmTosendTitle()" type="button" class="clibkbtnn">
+            <span class="spanclivk">&#8594;</span>
+        </button>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+   
+    <br><br>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- //i must 1- add company role for this buuton
+                                   -->
+
+<p style=" margin-left: 2.6em; padding: 0 1em 0.5em 0;"></p>
+
+
+
+
+
+<section class="projects no-padding-top">
+    <div class="container">
+
+
+
+
+
+
+       
+
+
+
+
+
+
+<div *ngIf="!showDiv">
+        <div *ngFor="let job of pushJob"  class="project">
+            <div class="row bg-white has-shadow">
+                <div>
+                    <div class="project-title d-flex align-items-center">
+                        
+                        <div class="text">
+
+                            <h5><a href="#" class="text-dark"> {{ job.pre_title }}</a></h5>
+                            <span>Job id == {{job.id}}</span>
+
+
+                            <div class="project-date"><span class="hidden-sm-down"> Publish Date: {{ job.job_PuplishDate
+                                    }} GMT+0200(Eastern European Standard Time)</span></div>
+
+                            <br>
+                            <p>Description:</p>
+
+                            <p>{{ job.description }}</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-2 text-center border-top">
+                        <div class="d-flex justify-content-center gap-3">
+
+
+                            <div class="project-date"><span class="hidden-sm-down">Deadline: {{ job.job_Deadline }}
+                                    GMT+0200 (Eastern European Standard Time)</span></div>
+
+                            <a [routerLink]="['/apply-jobs', job.id ]" type="button"
+                                class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                <i class="fa fa-pencil"></i> View who to apply
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <hr>   <hr>
+        </div>
+        </div>
+<!-- <br><br><br><br><br> -->
+
+        <div class="project">
+
+            <div class="row bg-white has-shadow" *ngIf="showDiv">
+                <div [style.background-color]="red ? 'red' : (red2 ? 'red' : null)" class="card">
+                    <div>
+                        <div class="project-title d-flex align-items-center">
+                           
+                            <div class="text">
+
+                                <h5><a href="#" class="text-dark"> Senior/Mid-level Quality Assurance</a></h5>
+                                <span>Job id =={{jobId}}</span>
+
+
+                                <div class="project-date"><span class="hidden-sm-down"> Puplish Date = 2023-01-10
+                                        T07:07:00 GMT+0200
+                                        (Eastern European Standard Time)</span></div>
+
+                                <br>
+                                <p>Description:</p>
+
+                                <p>QA</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 pt-2 text-center border-top">
+                            <div class="d-flex justify-content-center gap-3">
+
+
+                                <div class="project-date"><span class="hidden-sm-down">Deadline: job_Deadline =
+                                        2023-03-10 T07:07:00 GMT+0200
+                                        (Eastern European Standard Time)
+                                    </span></div>
+
+                                <a [routerLink]="['/apply-jobs',27]" type="button"
+                                    class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                    <i class="fa fa-pencil"></i> View who to apply
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+
+            <div class="row bg-white has-shadow" *ngIf="showDiv">
+                <div [style.background-color]="red ? 'red' : (red2 ? 'red' : null)" class="card">
+                    <div>
+                        <div class="project-title d-flex align-items-center">
+                           
+                            <div class="text">
+
+                                <h5><a href="#" class="text-dark"> Senior Front End</a></h5>
+                                <span>Job id ={{jobId2}}</span>
+
+
+                                <div class="project-date"><span class="hidden-sm-down"> Puplish Date = 2023-03-05
+                                        T07:07:00 GMT+0200
+                                        (Eastern European Standard Time)</span></div>
+
+                                <br>
+                                <p>Description:</p>
+
+                                <p>Front End Eng</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 pt-2 text-center border-top">
+                            <div class="d-flex justify-content-center gap-3">
+
+
+                                <div class="project-date"><span class="hidden-sm-down">Deadline: job_Deadline =
+                                        2023-04-11 T07:07:00 GMT+0200
+                                        (Eastern European Standard Time)
+                                    </span></div>
+
+                                <a [routerLink]="['/apply-jobs',27]" type="button"
+                                    class="btn btn-sm btn-info btn-outline-light btn-lg">
+                                    <i class="fa fa-pencil"></i> View who to apply
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>

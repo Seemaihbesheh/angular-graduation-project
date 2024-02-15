@@ -1,0 +1,39 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div [@routerTransition] class="allcom-page">
+<h1>All Companies</h1>
+<br>
+
+<div class="container">
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row gy-4 justify-content-center">
+
+        <div *ngFor="let ss of comapny2" class="col-sm-6 col-md-6 col-lg-4">
+          <div class="card">
+            <div class="card-body d-flex">
+              <div class="ps-3 col">
+                <h5 class="h6 mb-2"><a class="stretched-link text-reset" href="#">{{ss.userName}}</a></h5>
+                <p class="m-0">{{ss.about}}</p>
+                <br>
+                <div class="col-sm-5">
+                  <p class="mb-0 small-font"><i class="fas fa-envelope"></i>Email: {{ss.email}}</p>
+                </div>
+                <div class="col-sm-5">
+                  <p class="mb-0 small-font"><i class="fas fa-phone"></i>Phone Number: {{ss.phoneNumber}}</p>
+                </div>
+              </div>
+             
+            </div>
+           
+            <!-- <button style="width: 30%; background-color: rgb(92, 162, 223);" > Chat  </button> -->
+            <!-- <a [routerLink]="['/signup']" >Sign up user </a> -->
+      
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+</div>

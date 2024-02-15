@@ -13,17 +13,39 @@
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
                 width="150">
               <div class="mt-3">
-                <h4 *ngIf="comapny2" > {{comapny2.userName}}</h4>
-                
+                <h4 *ngIf="comapny2"> {{comapny2.userName}}</h4>
+
+
+
+
+
+
+
+
+                <p>print what </p>
+
+                <div>
+                  <p>user with id == {{usertest.id}} </p>
+
+                </div>
+
+
+
+
+
+
+
+
+
               </div>
             </div>
           </div>
         </div>
         <div class="card mt-3">
           <ul class="list-group list-group-flush">
-           
-           
-           
+
+
+
             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
               <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -93,14 +115,7 @@
 
             <hr>
 
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">password</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{comapny2.password}}
-              </div>
-            </div>
+
 
             <hr>
             <div class="row">
@@ -128,91 +143,192 @@
       <h1>Services</h1>
 
       <div class="row gutters-sm">
-        
+
         <div class="col-sm-6 mb-3">
-          
+
           <div class="card h-100">
-            
-            <div  *ngIf="comapny2"class="card-body">
+
+            <div *ngIf="comapny2" class="card-body">
 
 
 
 
 
-              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2"> {{comapny2.services_title}}
-              </i></h6>
-            <div>
-              {{comapny2.services_about}}
-            </div>
+              <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">
+                  {{comapny2.services_title}}
+                </i></h6>
+              <div>
+                {{comapny2.services_about}}
+              </div>
 
-              
 
-              
 
-              
+
+
+
             </div>
 
           </div>
         </div>
 
 
-        
+
+
+
+
+
+
 
         <div class="row gutters-sm">
-        
-          <div class="col-sm-6 mb-3">
-            
-            <div class="card h-100">
-              
-              <div class="card-body">
-  
-  
-  
-  
-                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Firewall Services
-                </i></h6>
-              <div>
-                Firewalls are a common, integral part of any cybersecurity plan. Most companies handle their own or have a firewall for their network – but in some cases will elect a third party for additional firewall options. Options vary based on the provider.
-  
-                Some firewalls are hybrid models, for instance, which allow for additional control and network monitoring options
-              </div>
-  
-                
-              </div>
-  
-            </div>
-          </div>
 
-          <div class="row gutters-sm">
-        
-            <div class="col-sm-6 mb-3">
-              
-              <div class="card h-100">
-                
-                <div class="card-body">
-    
-    
-    
-    
-                  <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Managed IT Services
+          <div *ngFor="let pro of project" class="col-sm-6 mb-3">
+
+            <div class="card h-100">
+
+              <div class="card-body">
+
+
+
+
+                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">{{pro.title}}
+                    Services
 
 
                   </i></h6>
                 <div>
-                  A wide, all-encompassing type of service, managed IT is usually a part of an MSP (managed service provider) which deals with single or multiple IT service needs. Most commonly, managed IT services handle remote server, desktop, and device management. Other common uses involve remote cybersecurity.
+                  {{pro.decription}}
                 </div>
-    
-                  
-                </div>
-    
+
+
               </div>
+
+            </div>
+          </div>
+
+
+
+          <p style=" margin-left: 2.6em; padding: 0 40em 3em 0;">
+
+          <p style=" margin-left: 2.6em; padding: 0 40em 3em 0;">
+
+
+
+          <div class="row gutters-sm">
+
+            <!-- <div class="col-sm-6 mb-3"> -->
+            <div class="col-sm-12 mb-3">
+              <!-- borderr class -->
+              <div class="card h-100">
+
+                <div class="card-body">
+
+
+
+
+
+                  <div class="row g-0 my-5">
+
+
+<!-- 
+                    <div class="col p-3">
+                      <h3>Give Your Review</h3>
+                      <h5 class="mt-4">Write Your Review</h5>
+
+                      <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+
+
+                        <div class="form-content">
+
+
+                          <div class="form-group">
+                            <input placeholder="UserName" class="form-control input-underline input-lg" type="text"
+                              formControlName="UserName" />
+                          </div>
+
+
+                          <br>
+
+
+                          <div class="form-group">
+                            <input placeholder="ReviewContent" class="form-control input-underline input-lg" type="text"
+                              formControlName="ReviewContent" />
+                          </div>
+
+                          <br>
+
+
+                        </div>
+
+                      </form>
+
+
+
+
+
+                      <div class="d-flex align-items-start">
+
+                        <a (click)="submit()" class="btn btn-outline-secondary mt-4 me-5" form="createForm">{{
+                          'Save Review'
+                          }}</a>
+
+
+
+                        <div>
+
+
+
+                          <br><br><br>
+
+
+
+
+                          <h6 class="text-success" *ngIf="reviewSaved">Review Saved Succesfully!</h6>
+                        </div>
+                      </div>
+                    </div> -->
+
+
+
+
+
+
+
+
+
+                    <!-- Other Review -->
+                    <div class="col p-3">
+                      <h3>Other Reviews</h3>
+                      <!-- <h6 *ngIf="otherReviews.length === 0">No Reviews Yet!</h6> -->
+
+
+                      <!-- <div class="card mt-3" *ngFor="let review of otherReviews"> -->
+                      <div *ngFor="let ss of reviews" class="card mt-3">
+                        <div class="card-header d-flex justify-content-between">
+                          <div class="card-text">
+                            {{ss.userName}}
+
+                          </div>
+
+                        </div>
+                        <div class="card-body">
+                          <div class="card-text">{{ss.reviewContent}}</div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+
             </div>
 
+          </div>
 
-
-
-
-
+        </div>
 
 
       </div>

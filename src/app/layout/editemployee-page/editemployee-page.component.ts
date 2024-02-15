@@ -81,13 +81,13 @@ export class EditemployeePageComponent implements OnInit {
    
     const formVal = Object.assign({}, this.form.value);
 
-    this.signUpp();
+    this.newSkill();
   }
  /////////////////////////////////////////////////////////////////
-  private signUpp(): void {
+  private newSkill(): void {
     this.service.registernewskill(this.form.value).subscribe(
       res => {
-        console.log("hi i'am call the cotrooler")
+        console.log("hi i'am call the  registernewskill cotrooler and i must push this skill ");
        
         this.form.reset();
       },

@@ -30,25 +30,23 @@
 
                             <div class="form-content">
 
-
-                                <div class="form-group">
-                                    <input [placeholder]="'Description'" class="form-control input-underline input-lg"
-                                        type="text" formControlName="Description" />
-                                </div>
-
-
+                              
                                 <br>
-
                                 <div class="form-group">
                                     <input [placeholder]="'Pre_title'" class="form-control input-underline input-lg"
                                         type="text" formControlName="Pre_title" />
                                 </div>
                                 <br>
-
                                 <div class="form-group">
-                                    <input [placeholder]="'Title'" class="form-control input-underline input-lg"
-                                        type="text" formControlName="Title" />
-                                </div><br>
+                                    <input [placeholder]="'Description'" class="form-control input-underline input-lg"
+                                        type="text" formControlName="Description" />
+                                </div> 
+
+
+                                <br>
+
+
+                            
                                 <div class="form-group">
                                     <input [placeholder]="'Requrment'" class="form-control input-underline input-lg"
                                         type="text" formControlName="Requrment" />
@@ -62,16 +60,28 @@
                                 </div><br>
 
 
-
+<!-- 
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <select class="form-control" type="text" formControlName="city">
+                                        <option>Nablus</option>
+                                        <option>Ramallah</option>
+                                        <option>Jenin</option>
+                                        <option>Tulkarm</option>
+                    
+                                    </select>
+                                </div> -->
 
 
 
                                 <div class="form-group">
-                                    <input [placeholder]="'Email'" class="form-control input-underline input-lg"
-                                        type="text" formControlName="Email" />
+                                    <label>job PuplishDate</label>
+                                    <input [placeholder]="'job PuplishDate'"  type="datetime-local" class="form-control input-underline input-lg"
+                                        formControlName="Job_PuplishDate" />
                                 </div><br>
 
                                 <div class="form-group">
+                                    <label>Job_Deadline</label>
                                     <input [placeholder]="'Job_Deadline'"  type="datetime-local" class="form-control input-underline input-lg"
                                         formControlName="Job_Deadline" />
                                 </div><br>
@@ -81,7 +91,7 @@
                                 <div class="form-group">
                                     <label>auto fill company id</label>
                                     <input  class="form-control input-underline input-lg"
-                                        formControlName="companyid" [(ngModel)]="companyID"  [placeholder]="'companyid'"/>
+                                        formControlName="companyid"  [placeholder]="'companyid'"/>
                                 </div><br>
 
                             </div>
@@ -116,5 +126,6 @@
             </div>
         </div>
     </div>
+
 </div>
 </div>

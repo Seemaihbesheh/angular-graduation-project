@@ -16,9 +16,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-right">
-                                <button type="button">
+                                <button  [routerLink]="['/editemployee-page']"  type="button">
                                     Edit Profile</button>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
                                     class="m-l-15">{{user.city}}</span></p>
 
 
-                                 
+
 
                         </div>
                         <ul class="social-links list-inline mt-4 mb-0">
@@ -77,6 +78,14 @@
                     <div class="col-sm-4">
                         <div class="card-box tilebox-one"><i class="icon-layers float-right text-muted"></i>
                             <h2 *ngIf="user" class="" data-plugin="counterup">GPA : {{user.gpa}}</h2>
+
+
+                            <p>print what </p>
+
+                            <div>
+                                <p>user with id == {{usertest.id}} </p>
+
+                            </div>
                         </div>
                     </div>
                     <!-- end col -->
@@ -142,10 +151,10 @@
                             <li>{{ss.skillone}}</li>
                             <li>{{ss.skilltwo}}</li>
                         </ul>
-                        
-                        
 
-                       
+
+
+
 
                     </div>
 
@@ -157,35 +166,175 @@
 
 
 
-               
+
                 <div class="card-box">
                     <h4 class="header-title mb-3">My Projects</h4>
                     <div class="table-responsive">
-                        <table  class="table">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                  
-                                    <th  >Project tilte</th>
-                                   
+
+                                    <th>Project tilte</th>
+
                                     <th>Decription</th>
                                 </tr>
                             </thead>
-                            <tbody *ngFor="let pro of project" >
+                            <tbody *ngFor="let pro of project">
                                 <tr>
-                                    <td>{{pro.Title}}</td>
-                                    <td>{{pro.Decription}}</td>
-                                   
+                                    <td>{{pro.title}}</td>
+                                    <td>{{pro.decription}}</td>
+
                                 </tr>
-                              
-                               
+
+
                             </tbody>
                         </table>
                     </div>
-                </div> 
+                </div>
             </div>
             <!-- end col -->
         </div>
         <!-- end row -->
     </div>
     <!-- container -->
+</div>
+
+<br>
+<br>
+
+<div class="main"> 
+    <h1 class="center">
+        My Posts
+    </h1>
+</div>
+
+
+<div class="main">
+
+
+    <div class="center">
+        <div>
+
+
+            <div *ngFor="let without of without">
+                <div class="friends_post">
+
+                    <div class="friend_post_top">
+
+                        <div class="img_and_name">
+
+                            <div class="friends_name">
+
+                                <p *ngIf="user" class="friends_name">
+                                    {{user.userName}}
+                                </p>
+
+
+                                <p class="time"> {{dates}}</p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="menu">
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <p>
+                        Text : {{without.text}}
+
+                    </p>
+
+
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+            
+            <!-- <div *ngFor="let product of products">
+                <div class="friends_post">
+
+                    <div class="friend_post_top">
+
+                        <div class="img_and_name">
+
+                            <div class="friends_name">
+
+                                <p *ngIf="user" class="friends_name">
+                                    {{user.userName}}
+                                </p>
+
+
+                                <p class="time"> {{dates}}</p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="menu">
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </div>
+
+                    </div> -->
+
+
+<!-- 
+                    <p>
+                        Text : {{product.productName}}
+
+                    </p>
+                    <p>
+
+
+
+                        File Name : <a> {{product.productImage}}</a>
+
+                    </p>
+
+
+
+
+                    <p> -->
+
+                        <!-- if flag true then img view -->
+                        <!-- <img  *ngIf="!flag" [src]="imageBaseUrl+product.productImage"> -->
+                        <!-- <img [src]="imageBaseUrl+product.productImage">
+
+
+                    </p>
+
+
+                    <br> <br>
+
+
+                 
+
+                    <hr>
+
+
+                </div> -->
+
+
+
+            <!-- </div> -->
+        </div>
+    </div>
+
 </div>

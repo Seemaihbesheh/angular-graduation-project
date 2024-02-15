@@ -1,8 +1,9 @@
 <div [@routerTransition] class="login-page">
     <div class="row justify-content-md-center">
         <div class="col-md-4">
-            <img class="user-avatar"
-                src="assets/images/job-hup-high-resolution-logo-color-on-transparent-background.png" width="150px" />
+            <!-- <img class="user-avatar"
+                src="assets/images/job-hup-high-resolution-logo-color-on-transparent-background.png" width="150px" /> -->
+                <link rel="icon" type="image/x-icon" href="job-hup-high-resolution-logo-color-on-transparent-background.png" />
 
             <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
 
@@ -17,6 +18,10 @@
                         <input [placeholder]="'Password' | translate" class="form-control input-underline input-lg"
                             type="password" formControlName="password" />
                     </div>
+                    <p lass="bottom-div-container">
+
+                        <a [routerLink]="['/emailForgetpassword']" href="Javascript:void(0)">Forget Password !!</a>
+                    </p>
                 </div>
 
 
@@ -28,15 +33,19 @@
 
                 <a [routerLink]="['/signup']" class="btn rounded-btn">{{ 'Sign up user' | translate }}</a>
 
-                <a [routerLink]="['/signupcompany']" class="btn rounded-btn">{{ 'Sign up company' | translate }}</a>
-                &nbsp;
+                or <a style="font-size: small;" [routerLink]="['/signupcompany']">{{ 'Sign up as company' | translate
+                    }}</a>
 
-              
+
+
 
 
             </form>
+
+
         </div>
-        <a [routerLink]="['/emailForgetpassword']" href="Javascript:void(0)">Forget Password</a>
+        <br>
+
     </div>
 
 

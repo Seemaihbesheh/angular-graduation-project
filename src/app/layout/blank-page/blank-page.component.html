@@ -6,29 +6,178 @@
     </div>
 
     <div class="m-20 p-5">
-        <div class="msg-box">
+        <div class="scrollable">
+            <div class="box">
+                <div class="chat-box chatContainerScroll">
 
-            <ul>
 
-                <li *ngFor="let mObj of msgInboxArray" [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'">
-                    <span style="color: black; "> From :</span> Seema
-                    <span style="color: black;"> To :</span> {{mObj.user}} <br />
 
-                    <span class="msg-italic-style"> {{mObj.msgText}}</span><br />
-                    <span style="font-size: xx-small;" class="time_date"> {{mObj.date | date:'medium'}} </span>
-                    <br>
-                    <br>
+                    <ul>
 
-                </li>
+                        <li class="one">
+                            <span style="color: black; "> From :</span> Asal
+                            <span style="color: black;"> To :</span> All <br />
 
-            </ul>
+                            <span class="msg-italic-style"> Hello,
+                                If you have any questions, please let us know </span><br />
+                            <!-- <span style="font-size: xx-small;" class="time_date"> {{mObj.date | date:'medium'}} </span> -->
+                            <span style="font-size: xx-small;" class="time_date"> May 1, 2023, 3:31:41 AM </span>
+
+                            <br>
+                            <br>
+
+
+                        </li>
+
+                        <li class="right">
+                            <span style="color: black; "> From :</span> Maya
+                            <span style="color: black;"> To :</span> Asal <br />
+
+                            <span class="msg-italic-style">I want to inquire about the company's place?</span><br />
+                            <span style="font-size: xx-small;" class="time_date"> May 2, 2023, 1:00:41 AM </span>
+
+                            <br>
+                            <br>
+
+
+                        </li>
+
+
+
+                        <li class="one">
+                            <span style="color: black; "> From :</span> Asal
+                            <span style="color: black;"> To :</span> Maya <br />
+
+                            <span class="msg-italic-style">
+                                Our location is in Palestine, Nablus, Rafidia Street </span><br />
+                            <span style="font-size: xx-small;" class="time_date"> May 5, 2023, 3:31:41 AM </span>
+                            <br>
+                            <br>
+
+
+                        </li>
+
+
+
+                        <li class="right">
+                            <span style="color: black; "> From :</span> Maya
+                            <span style="color: black;"> To :</span> Asal <br />
+                            <span class="msg-italic-style">OK thanks you,</span><br />
+
+                            <span class="msg-italic-style">I want to inquire about QA postion ?</span><br />
+                            <span style="font-size: xx-small;" class="time_date"> May 5, 2023, 3:33:41 AM </span>
+                            <br>
+                            <br>
+
+
+                        </li>
+
+
+
+                        <li class="rightcolor">
+                            <span style="color: black; "> From :</span> Roaa
+                            <span style="color: black;"> To :</span> Asal <br />
+
+                            <span class="msg-italic-style">I want to inquire about the languages you use in the
+                                BackEnd</span><br />
+                            <span style="font-size: xx-small;" class="time_date"> May 5, 2023, 3:34:41 AM </span>
+                            <br>
+                            <br>
+
+
+                        </li>
+
+
+
+                        <li class="one">
+                            <span style="color: black; "> From :</span> Asal
+                            <span style="color: black;"> To :</span> Maya <br />
+
+                            <span class="msg-italic-style">
+                                A QA engineer creates tests that identify issues with software
+                                before a <br>product launch.
+                                These tests entail other tasks such as developing and <br>running new tests
+                                and reporting their results to stakeholders, who will
+                                <br>collaborate to fix program bugs or problems.
+                            </span><br />
+                            <span style="font-size: xx-small;" class="time_date"> May 8, 2023, 3:31:41 AM </span>
+                            <br>
+                            <br>
+
+
+                        </li>
+
+                    </ul>
+                    <ul>
+
+                        <li class="one">
+                            <span style="color: black; "> From :</span> Asal
+                            <span style="color: black;"> To :</span> Roaa <br />
+
+                            <span class="msg-italic-style"> PHP,C#,ASP.net
+                            </span><br />
+                            <span style="font-size: xx-small;" class="time_date"> May 8, 2023, 3:31:41 AM </span>
+                            <br>
+                            <br>
+
+
+                        </li>
+
+
+
+                        <li class="rightcolor">
+                            <span style="color: black; "> From :</span> Abood
+                            <span style="color: black;"> To :</span> Asal <br />
+
+                            <span class="msg-italic-style">I want to inquire about the languages you use in the
+                                FrontEnd</span><br />
+                            <span style="font-size: xx-small;" class="time_date"> Jun 3, 2023, 1:30:08 AM </span>
+
+
+
+                            <br>
+                            <br>
+
+
+                        </li>
+
+
+
+                    </ul>
+
+
+
+                    <ul>
+
+                        <li *ngFor="let mObj of msgInboxArray"
+                            [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'">
+                            <span style="color: black; "> From :</span> Asal
+                            <span style="color: black;"> To :</span> {{mObj.user}} <br />
+
+                            <span class="msg-italic-style"> {{mObj.msgText}}</span><br />
+                            <span style="font-size: xx-small;" class="time_date"> {{mObj.date | date:'medium'}} </span>
+
+
+
+                            <br>
+                            <br>
+
+                        </li>
+
+                    </ul>
+
+
+
+                </div>
+            </div>
+
 
         </div>
 
         <br><br>
         <br>
 
-        To :<input style="width: 5cm;background-color: rgb(197, 205, 209)" type="text" placeholder=" name"
+        To :<input style="width: 5cm;background-color: rgb(255, 255, 255)" type="text" placeholder=" name"
             class="name-box" [(ngModel)]="msgDto.user" class="form-control" />
 
         <div class="ud-flex-row">

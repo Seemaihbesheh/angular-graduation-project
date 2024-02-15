@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-    <h2 class="text-muted">الصفحة الرئيسيه <small>Statistics Overview</small></h2>
+    <!-- <h2 class="text-muted">الصفحة الرئيسيه <small>Statistics Overview</small></h2> -->
     <section style="background-color: white;" class="section about-section gray-bg" id="about">
 
 
@@ -19,7 +19,7 @@
                             <div class="col-md-6">
                                 <div class="media">
                                     <label>E-mail</label>
-                                    <p>jobshub@domain.com</p>
+                                    <p>admainh@gmail.com</p>
                                 </div>
                                 <div class="media">
                                     <label>Phone</label>
@@ -35,6 +35,7 @@
                 <div class="col-lg-6">
                     <div class="about-avatar">
                         <img [src]="jobs" title="" alt="">
+
                     </div>
                 </div>
             </div>
@@ -110,6 +111,34 @@
 
                     </div>
                 </div>
+                <div class="col-sm-9 col-lg-7">
+
+
+                    <div class="card-header with-elements">
+                        <h2 class="card-header-title">All users in our program &nbsp;
+                            <!-- <small class="text-muted">591</small> -->
+                        </h2>
+
+                    </div>
+                    <div class="row no-gutters row-bordered row-border-light"
+                        style="height: 400px; overflow-y: scroll;">
+
+
+                        <a *ngFor="let oneUser of username " href="javascript:void(0)"
+                            class="d-flex col-2 col-sm-2 col-md-2 flex-column align-items-center text-body py-3 px-2">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""
+                                class="d-block ui-w-40 rounded-circle mb-2">
+                            <div>
+
+                                <a type="button" [routerLink]="['/employee-page',  oneUser.id ]"> {{oneUser.userName}}
+
+                                </a>
+                            </div>
+
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -126,46 +155,54 @@
 
     <hr />
     <div class="row">
-        <div class="col-xl-4 col-lg-10">
+        <!-- <div class="col-xl-4 col-lg-10">
 
-           
-                <div class="card-header with-elements">
-                  <span class="card-header-title">All users in our program &nbsp;
-                    <!-- <small class="text-muted">591</small> -->
-                  </span>
-                  
-                </div>
-                <div  class="row no-gutters row-bordered row-border-light">
-                 
-               
-                 <a  *ngFor="let oneUser of username " href="javascript:void(0)" class="d-flex col-2 col-sm-2 col-md-2 flex-column align-items-center text-body py-3 px-2">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="d-block ui-w-40 rounded-circle mb-2">
-                    <div >{{oneUser.userName}}</div>
-                  </a></div>
-               
+
+            <div class="card-header with-elements">
+                <h2 class="card-header-title">All users in our program &nbsp;
+                </h2>
+
+            </div>
+            <div class="row no-gutters row-bordered row-border-light" style="height: 400px; overflow-y: scroll;">
+
+
+                <a *ngFor="let oneUser of username " href="javascript:void(0)"
+                    class="d-flex col-2 col-sm-2 col-md-2 flex-column align-items-center text-body py-3 px-2">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""
+                        class="d-block ui-w-40 rounded-circle mb-2">
+                    <div>
+
+                        <a type="button" [routerLink]="['/employee-page',  oneUser.id ]"> {{oneUser.userName}}
+
+                        </a>
+                    </div>
+
+                </a>
+            </div>
+
         </div>
-
+ -->
 
 
         <div class="col-xl-6 col-lg-6">
 
-        
 
 
 
-            <div class="card">
-                <div class="card-body">
+
+            <!-- <div class="card"> -->
+            <!-- <div class="card-body">
                     <div class="card-title">Chat Box</div>
 
-                </div>
+                </div> -->
 
-                <div class="m-9 p-5">
-                    <div class="msg-box">
+            <!-- <div class="m-9 p-5">
+                    <div class="msg-box"> -->
 
-                        <div class="chat-container">
+            <!-- <div class="chat-container">
 
 
-                            <ul class="chat-box chatContainerScroll">
+                            <ul class="chat-box chatContainerScroll" style="height: 130px; overflow-y: scroll;">
                                 <li class="chat-left" *ngFor="let mObj of msgInboxArray"
                                     [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'">
 
@@ -180,7 +217,6 @@
                                         <br />
 
                                         <span class="msg-italic-style"> {{mObj.msgText}}</span><br />
-                                        <!-- <span  class="fa fa-check-circle" class="time_date"> {{mObj.date | date:'medium'}} </span> -->
                                         <br>
 
 
@@ -193,8 +229,8 @@
 
 
 
-                        </div>
-                        <!-- <ul>
+                        </div> -->
+            <!-- <ul>
             
                             <li *ngFor="let mObj of msgInboxArray" [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'">
                                 <span style="color: black; "> From :</span> Seema
@@ -208,28 +244,26 @@
                             </li>
             
                         </ul> -->
-
-                    </div>
-
+            <!-- 
+                    </div> -->
+            <!-- 
                     <br><br>
-                    <br>
+                    <br> -->
 
-                   <input style="width: 5cm;background-color: rgb(255, 255, 255)" type="text" placeholder="To :"
+            <!-- <input style="width: 5cm;background-color: rgb(255, 255, 255)" type="text" placeholder="To :"
                         class="name-box" [(ngModel)]="msgDto.user" class="form-control" />
 
                     <div class="ud-flex-row">
-                        <!-- <input type="text" class="msg-Input form-control" placeholder="Enter Msg" [(ngModel)]="msgDto.msgText"> -->
-
+                        <input type="text" class="msg-Input form-control" placeholder="Enter Msg" [(ngModel)]="msgDto.msgText"> -->
+            <!-- 
                         <textarea class="form-control" class="msg-Input form-control" [(ngModel)]="msgDto.msgText"
                             placeholder="Enter Msg:" cols="60" rows="3">
                      </textarea>
                         <br> <button class="btn btn-info" (click)="send()"> Send</button>
-                    </div>
+                    </div>  -->
 
-                </div>
-            </div>
-
-
+            <!-- </div>
+            </div> -->
 
 
 
@@ -258,47 +292,50 @@
 
 
 
-        </div>
-        <!-- <div class="col-xl-3 col-lg-6">
+
+
+            <!-- </div> -->
+            <!-- <div class="col-xl-3 col-lg-6">
             <app-stat [bgClass]="'warning'"  [icon]="'fa-tasks'" [label]="'New post!'"></app-stat>
         </div> -->
 
 
 
 
-    </div>
-
-
-    <br>
-
-
-
-
-
-
-
-
-    <div class="row">
-
-        <div class="card card-default">
-            <!-- /.card-header -->
-            <app-timeline></app-timeline>
-            <!-- /.card-body -->
-
-            <!-- /.card -->
         </div>
-        <!-- /.col-lg-8 -->
-
-        <!-- /.col-lg-4 -->
 
 
+        <br>
 
 
 
-    </div>
 
 
-    <div>
+
+
+
+        <div class="row">
+
+            <div class="card card-default">
+                <!-- /.card-header -->
+
+                <app-timeline></app-timeline>
+                <!-- /.card-body -->
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col-lg-8 -->
+
+            <!-- /.col-lg-4 -->
+
+
+
+
+
+        </div>
+
+
+        <!-- <div>
 
         <h1> name from token are ,, {{tokenName}}</h1>
 
@@ -313,8 +350,8 @@
 
 
 
-    </div>
-
+    </div> -->
+        <!-- 
     <br>
     <br>
-    <br>
+    <br> -->

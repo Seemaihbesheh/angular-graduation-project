@@ -25,7 +25,7 @@ body{
 .in-msg{
     color: rgb(25, 0, 255);
   
-  text-align: left;
+  text-align: right;
 }
 .ex-msg{
     color: rgb(25, 0, 255);
@@ -35,3 +35,34 @@ body{
 ul{
     list-style: none;
 }
+.right{
+    color: rgb(255, 38, 0);
+    text-align: left;
+
+    
+}
+.rightcolor{
+    color: rgb(255, 0, 170);
+    text-align: left;
+
+}
+
+
+
+.left{
+    color: rgb(25, 0, 255);
+  
+    text-align: left;
+}
+.one{
+    color: rgb(25, 0, 255);
+  
+    text-align: right;
+}
+
+
+
+.scrollable {
+    overflow-y: scroll;
+    height: 300px; /* Adjust the height as needed */
+  }

@@ -828,3 +828,19 @@ nav .right img{
     border: 3px solid #45abff;
     cursor: pointer;
 }
+.like-button,
+.dislike-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.like-counter,
+.dislike-counter {
+  margin-left: 5px;
+  font-weight: bold;
+}

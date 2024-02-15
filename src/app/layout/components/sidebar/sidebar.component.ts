@@ -11,14 +11,19 @@ import { AuthService } from '../../auth.service';
 })
 export class SidebarComponent implements OnInit {
     public role: string = "";
+
+
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
+    public id_login: Number = 0;
 
-    constructor(private translate: TranslateService, public router: Router,private userStore: UserStoreService,private auth: AuthService) {
+
+    constructor(private translate: TranslateService,
+         public router: Router,private userStore: UserStoreService,private auth: AuthService) {
         this.router.events.subscribe((val) => {
             if (val instanceof NavigationEnd && window.innerWidth <= 992 && this.isToggled()) {
                 this.toggleSidebar();
@@ -34,6 +39,25 @@ export class SidebarComponent implements OnInit {
         this.collapsed = false;
         this.showMenu = '';
         this.pushRightClass = 'push-right';
+
+
+        
+      this.userStore.getIdFromStore()
+      .subscribe(val => {
+          //console.log(" now in getRoleFromStore function ");
+  
+  
+          let fulllidFromToken = this.auth.getIdFromTken();// string
+  
+  
+          var numberValue = Number(fulllidFromToken);
+  
+          this.id_login = val || numberValue
+          console.log("user data 'idd' whose login == == = = = ");
+  
+          console.log(this.id_login);
+      })
+  
 
         this.userStore.getRoleFromStore()
         .subscribe(val => {

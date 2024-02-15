@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 //import { comapny } from './admin';
 import {admin} from './admin';
 import { UserStoreService } from '../user-store.service';
+import { userr } from '../dashboard/userr';
 @Component({
     selector: 'app-admin-page',
     templateUrl: './admin-page.component.html',
@@ -12,6 +13,10 @@ export class AdminPageComponent implements OnInit {
 
   admin: admin[];
 
+
+  username: userr[];
+
+  
   admin2: admin[];
     
 // we don't use it now!! becouse admin is static in website
@@ -24,7 +29,15 @@ export class AdminPageComponent implements OnInit {
 
      
    
-
+      private getuserss(): void {
+        // var  idd =60;
+        //        this.service.getuserbyid(idd).subscribe(data => {
+ 
+         this.service.getallUseru().subscribe(data => {
+          this.username = data;      
+        //  console.log(this.user);
+         });
+       }
 
     ngOnInit() {
 
@@ -53,6 +66,7 @@ console.log((this.id_login.valueOf()));
 
     
       this.getadminid();
+      this.getuserss();
     }
    
 

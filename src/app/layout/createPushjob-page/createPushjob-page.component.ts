@@ -6,7 +6,6 @@ import { AuthService } from '../auth.service';
 //import {Statussss} from './company-page/Statussss'
 import { Statussss } from '../company-page/Statussss';
 import { comapny } from '../company-page/comapny';
-import { UserStoreService } from '../user-store.service';
 @Component({
     selector: 'app-createPushjob-page',
     templateUrl: './createPushjob-page.component.html',
@@ -16,56 +15,39 @@ import { UserStoreService } from '../user-store.service';
 })
 export class CreatePushjobPageComponent implements OnInit {
 
-  public id_login: Number = 0;
 
-  // public initialValue = this.id_login; // Set the initial value here
+  message: string = '';
+  response: any = {};
+  public totalCounter: number = 0;
 
-  public companyID : Number = 0;
    // userr: userr[];
    form: FormGroup;
    loading = false;
-  
+ 
    btnLoader = false;
    
    constructor(
         private service: AuthService,
         private fb: FormBuilder,
-        private userStore: UserStoreService
         ) {}
 
    ngOnInit() {
+    const savedResponse = localStorage.getItem('response');
+    if (savedResponse) {
+      this.response = JSON.parse(savedResponse);
+      }
+      this.response = JSON.parse(localStorage.getItem('response'));
+      const savedTotalCounter = localStorage.getItem('totalCounter');
+      if (savedTotalCounter) {
+        this.totalCounter = parseInt(savedTotalCounter);
+      }
+    
        this.initForm();
-
-       this.userStore.getIdFromStore()
-       .subscribe(val => {
-           //console.log(" now in getRoleFromStore function ");
-   
-   
-           let fulllidFromToken = this.service.getIdFromTken();// string
-   
-   
-           var numberValue = Number(fulllidFromToken);
-   
-           this.id_login = val || numberValue
-           console.log("id login in create joobbb");
-   
-           console.log(this.id_login);
-           console.log(" companyID of id in create joobbb");
-           this.companyID = this.id_login;
-
-           console.log(this.companyID);
-       })
-
-
-
-
-
    }
 
 
 
    submit():void {
- 
        if (this.form.invalid) {
          this.loading = false;
          return;
@@ -77,16 +59,38 @@ export class CreatePushjobPageComponent implements OnInit {
        console.log("hi i'am  in sumoit now")
 
        this.signUpp();
+
+
      }
     
      private signUpp(): void {
        this.service.addpushjobs(this.form.value).subscribe(
          res => {
            console.log("hi i'am call the PUSH JOBB  register");
-      
+           console.log("hi i'am call the PUSH JOBB  register")
+           console.log("hi i'am call the PUSH JOBB  register")
 
            this.handleSuccess();
            this.form.reset();
+
+
+           if (!this.response.items) {
+            this.response.items = [];
+          }
+          const existingItemIndex = this.response.items.findIndex(item => item.message === res.message );
+          if (existingItemIndex >= 0) {
+            this.response.items[existingItemIndex].counter++;
+            this.totalCounter++;
+          } else {
+            this.response.items.push({ message: res.message, counter: 1 });
+            this.totalCounter++;
+          }
+          localStorage.setItem('response', JSON.stringify(this.response));
+          localStorage.setItem('totalCounter', this.totalCounter.toString());
+          console.log('response.items after:', this.response.items);
+          window.location.reload();
+
+
          },
          err => {
            this.handleError(err.error);
@@ -104,6 +108,15 @@ export class CreatePushjobPageComponent implements OnInit {
        this.loading = false;
      }
    
+     decrementCounter(item: any) {
+      if (item.counter > 0) { 
+        item.counter--;
+        this.totalCounter--;
+        localStorage.setItem('response', JSON.stringify(this.response));
+        localStorage.setItem('totalCounter', this.totalCounter.toString());  
+      }
+    }
+  
    
      initForm():void {
            this.form = this.fb.group({
@@ -116,7 +129,7 @@ export class CreatePushjobPageComponent implements OnInit {
             Place : [null],
             Email : [null],
             Job_Deadline : [null],
-            
+            Job_PuplishDate:[null],
             companyid:[null]
                 //  Token:[null],
            });

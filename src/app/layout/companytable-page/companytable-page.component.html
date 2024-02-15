@@ -1,0 +1,69 @@
+<div [@routerTransition]>
+  <h1> See all Companys</h1>
+
+  <br>
+  <div  >
+      <div class="row">
+      
+      </div>
+      
+<br><br>
+
+
+      <div class="card mb-3">
+          <br><br>
+       
+          <table class="card-body table table-hover">
+              <thead>
+                  <tr>
+                      <th>company Id</th>
+                      <th>Company Name</th>
+                      <th>Email</th>
+                    
+                      <th>Phone Number</th>
+                      <th>address </th>
+                      <th>services_title</th>
+                  
+                      <th>Delete</th>
+
+                  </tr>
+              </thead>
+
+
+
+
+
+              <tbody *ngFor="let a of myData" >
+
+                  <tr>
+
+
+                       <td>{{a.id}}</td>
+                       <td>{{a.userName}}</td>
+
+                       <td>{{a.email}}</td>
+
+                       <td>{{a.phoneNumber}}</td>
+
+                       <td>{{a.address}}</td>
+
+                       <td>{{a.services_title}}</td>
+                      
+
+                    
+
+                      <td><button type="button" class="btn btn-danger" style="background-color: red;" (click)="deleteCompany(a.id)">Delete</button>
+                      </td>
+                  </tr>
+
+
+              </tbody>
+          </table>
+      </div>
+
+  </div>
+</div>
+
+
+
+

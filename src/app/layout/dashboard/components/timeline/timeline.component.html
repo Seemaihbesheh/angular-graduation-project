@@ -3,143 +3,519 @@
 <app-add-post></app-add-post>
 <div class="main">
 
-    <!------------------left------------------->
+<div class="right">
 
-
-
-
-        <!------------------left------------------->
-      
-      
-      
-        <!------------center---------------------->
-     
-    
-    <!------------center---------------------->
-
-
+</div>
     <div class="center" *ngIf="products">
-        <div *ngFor="let product of products">
-        <!-- <div  style="  display: inline-block; " class="mb-3">
-                
-                <form  class="form-inline my-2 my-lg-0">
-                    <input  aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="text" />
-                    
-                    <button style="color:beige ;background-color: rgb(18, 156, 45);" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-            <div class="my_post">
+        <div>
 
-                <div class="post_top">
 
-                    <img src="image/profile.png">
-                    <input type="text" placeholder="What's on you mind, John?">
+
+
+
+            <div class="friends_post">
+
+                <div class="friend_post_top">
+
+                    <div class="img_and_name">
+
+                        <div class="friends_name">
+
+                            <p class="friends_name">
+                                Majd Aqqad
+                            </p>
+
+
+                            <p class="time">
+                                Sat Apr 28 2023 12:03:13 GMT+0300 (Eastern European Summer Time)
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="menu">
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </div>
 
                 </div>
+
+                <p>
+                    I'm excited to announce that I have recently been promoted
+                    from a part-time QA Engineer to a full-time QA Engineer
+                    position at Foothill Technology Solutions. In my new role,
+                    I will be responsible for ensuring the quality of our software
+                    products by designing and executing test cases, identifying and
+                    reporting defects, and collaborating with the development team to resolve any issues.
+
+                </p>
+                <!-- <p>
+
+
+
+                    File Name : <a> {{product.productImage}}</a>
+
+                </p> -->
+
+                <!-- <img [src]="imageBaseUrl+product.productImage"> -->
+
+                <div class="about-avatar">
+
+                </div>
+
+
+
+                <br> <br>
+
+
+                <div class="like">
+
+                    <div *ngFor="let photo of video" class="like_icon">
+
+
+                        <button class="like-button" (click)="LikeCounter(photo)">Like</button>
+                        <span class="like-counter">{{photo.Like}}</span>&nbsp;
+                        <button class="dislike-button" (click)="DisLikeCounter(photo)">Dislike</button>
+                        <span class="dislike-counter">{{photo.DisLike}}</span>
+
+
+
+                    </div>
+
+                </div>
+
 
                 <hr>
 
-                <div class="post_bottom">
 
 
+                <p>All commentss</p>
 
-                    <div class="post_icon">
-                        <i class="fa-solid fa-images green"></i>
-                        <p>Photo</p>
+
+                <div style="background-color: rgb(224, 222, 222);" >
+                    <div style="background-color: rgb(229, 229, 229);" >
+                        By: Sally
+                        <br>
+                        Good Job
+                        <hr>
+
 
                     </div>
 
-                    <button class="btn btn-sm btn-success" type="button">Post</button>
- -->
+                </div>
+                <div style="background-color: rgb(224, 222, 222);" >
+                    <div style="background-color: rgb(229, 229, 229);" >
+                        By: Ahmad
+                        <br>
+                        very good
+                        <hr>
 
-        <!-- </div> -->
 
-        <!-- </div> -->
+                    </div>
+
+                </div>
+
+                <div style="background-color: rgb(224, 222, 222);" *ngIf="user">
+                    <div style="background-color: rgb(229, 229, 229);" *ngFor="let ss of commentss">
+                        By: {{user.userName}}
+                        <br>
+                        {{ss.commentText}}
+                        <hr>
+
+
+                    </div>
+
+                </div>
 
 
 
-        <!-- *ngIf="products" -->
-    
-        <div class="friends_post"  >
-            
 
-            <div class="friend_post_top">
+                <br>
 
-                <div class="img_and_name">
 
-                    <img src="image/post_1.jpg">
 
-                    <div class="friends_name">
-                        <p class="friends_name">
-                            Senuda De Silva
-                        </p>
-                        <p class="time">16h.</p>
+                <div class="comment_warpper">
+
+
+                    <div class="circle"></div>
+
+                    <div class="comment_search">
+
+                        <form role="form" id="createForm" (ngSubmit)="submit()" [formGroup]="form">
+
+
+                            <div class="form-content">
+
+
+                                <div class="form-group">
+                                    <input placeholder="Write comment" type="text" formControlName="commentText" />
+                                </div>
+
+
+
+
+                                <br>
+
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <a (click)="submit()" class="btn btn-outline-secondary mt-4 me-5" form="createForm">{{
+                        'Save Comment'
+                        }}</a>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- *ngIf="products" -->
+            <div class="friends_post">
+
+                <div class="friend_post_top">
+
+                    <div class="img_and_name">
+
+                        <div class="friends_name">
+
+                            <p class="friends_name">
+                                Sally Ihbesheh
+                            </p>
+
+
+                            <p class="time">
+                                Mon Apr 30 2023 03:22:13 GMT+0300 (Eastern European Summer Time)
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="menu">
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    I’m happy to share that I’m starting a new position as Software Development Engineer at Amazon Web
+                    Services (AWS)! #amazon #aws #softwaredevelopment #engineer
+
+
+                </p>
+                <!-- <p>
+
+
+
+                    File Name : <a> {{product.productImage}}</a>
+
+                </p> -->
+
+                <!-- <img [src]="imageBaseUrl+product.productImage"> -->
+
+                <div class="about-avatar">
+
+                </div>
+
+
+
+                <br> <br>
+
+
+                <div class="like">
+
+                    <div *ngFor="let photo of video2" class="like_icon">
+
+
+                        <button class="like-button" (click)="LikeCounter(photo)">Like</button>
+                        <span class="like-counter">{{photo.Like}}</span>&nbsp;
+                        <button class="dislike-button" (click)="DisLikeCounter(photo)">Dislike</button>
+                        <span class="dislike-counter">{{photo.DisLike}}</span>
+
+
+
+                    </div>
+
+                </div>
+
+
+                <hr>
+
+                <div class="comment_warpper">
+
+
+                    <div class="circle"></div>
+
+                    <div class="comment_search">
+
+                        <input type="text" placeholder="Write a comment">
+
+
+                    </div>
+                    <a (click)="submit()" class="btn btn-outline-secondary mt-4 me-5" form="createForm">{{
+                        'Save Comment'
+                        }}</a>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div *ngFor="let without of without">
+                <div class="friends_post">
+
+                    <div class="friend_post_top">
+
+                        <div class="img_and_name">
+
+                            <div class="friends_name">
+
+                                <p *ngIf="user" class="friends_name">
+                                    {{user.userName}}
+                                </p>
+
+
+                                <p class="time"> {{dates}}</p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="menu">
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </div>
+
                     </div>
 
 
-                </div>
 
-                <div class="menu">
+                    <p>
+                        Text : {{without.text}}
 
-                    <i class="fa-solid fa-ellipsis"></i>
+                    </p>
 
-                </div>
-
-            </div>
-            
-            <p >
-               
-                {{product.productName}}
-                <a> {{product.productImage}}</a>
-               
-            </p>
-          
-            <img [src]="imageBaseUrl+product.productImage">
-
-           
-            <div class="info">
-
-                <span>15 likes</span>
-            </div>
-
-            <hr>
-
-            <div class="like">
-
-                <div class="like_icon">
-                    <i class="fa-solid fa-thumbs-up activi"></i>
-                    <p>Like</p>
-                </div>
-
-            </div>
-            
-
-            <hr>
-
-            <div class="comment_warpper">
+                    <br>
 
 
-                <div class="circle"></div>
 
-                <div class="comment_search">
 
-                    <input type="text" placeholder="Write a comment">
+                    <div class="like">
 
+                        <div *ngFor="let photo of video3" class="like_icon">
+
+
+                            <button class="like-button" (click)="LikeCounter3(photo)">Like</button>
+                            <span class="like-counter">{{photo.Like}}</span>&nbsp;
+                            <button class="dislike-button" (click)="DisLikeCounter3(photo)">Dislike</button>
+                            <span class="dislike-counter">{{photo.DisLike}}</span>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="comment_warpper">
+
+
+                        <div class="circle"></div>
+
+                        <div class="comment_search">
+
+                            <input type="text" placeholder="Write a comment">
+
+
+                        </div>
+                        <a (click)="submit()" class="btn btn-outline-secondary mt-4 me-5" form="createForm">{{
+                            'Save Comment'
+                            }}</a>
+                    </div>
 
                 </div>
 
+
+
             </div>
 
-        </div>
-   
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div *ngFor="let product of products">
+                <div class="friends_post">
+
+                    <div class="friend_post_top">
+
+                        <div class="img_and_name">
+
+                            <div class="friends_name">
+
+                                <p *ngIf="user" class="friends_name">
+                                    {{user.userName}}
+                                </p>
+
+
+                                <p class="time"> {{dates}}</p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="menu">
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <p>
+                        Text : {{product.productName}}
+
+                    </p>
+              
+
+
+                        <!-- File Name : <a> {{product.productImage}}</a> -->
+
+
+
+
+
+                    <p>
+
+                        <!-- if flag true then img view -->
+                        <!-- <img  *ngIf="!flag" [src]="imageBaseUrl+product.productImage"> -->
+                        <img [src]="imageBaseUrl+product.productImage">
+
+
+                    </p>
+
+
+                    <br> <br>
+
+
+                    <div class="like">
+
+                        <div *ngFor="let photo of video3" class="like_icon">
+
+
+                            <button class="like-button" (click)="LikeCounter3(photo)">Like</button>
+                            <span class="like-counter">{{photo.Like}}</span>&nbsp;
+                            <button class="dislike-button" (click)="DisLikeCounter3(photo)">Dislike</button>
+                            <span class="dislike-counter">{{photo.DisLike}}</span>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="comment_warpper">
+
+
+                        <div class="circle"></div>
+
+                        <div class="comment_search">
+
+                            <input type="text" placeholder="Write a comment">
+
+
+                        </div>
+                        <a (click)="submit()" class="btn btn-outline-secondary mt-4 me-5" form="createForm">{{
+                            'Save Comment'
+                            }}</a>
+                    </div>
+
+                </div>
+
+
+
+            </div>
         </div>
 
     </div>
 
 </div>
 <!------------------right------------------>
-
-

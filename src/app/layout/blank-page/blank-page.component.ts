@@ -4,9 +4,7 @@ import { AuthService } from '../auth.service';
 
 
 
-//import {Statussss} from './company-page/Statussss'
-import { Statussss } from '../company-page/Statussss';
-import { comapny } from '../company-page/comapny';
+
 import { MessageDto } from '../Dto/MessageDto';
 import { ChatService } from '../chat.service';
 

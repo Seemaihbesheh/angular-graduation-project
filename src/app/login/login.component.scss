@@ -42,23 +42,26 @@ $topnav-background-color: #121421;
     }
 
     .rounded-btn {
-        -webkit-border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
         border-radius: 50px;
-        color: rgba(255, 255, 255, 0.8);
-        background: $topnav-background-color;
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        font-size: 18px;
-        line-height: 40px;
-        padding: 0 25px;
+        transition: background-color 0.3s ease;
     }
 
     .rounded-btn:hover,
     .rounded-btn:focus,
     .rounded-btn:active,
     .rounded-btn:visited {
-        color: rgba(255, 255, 255, 1);
+     background-color: #0056b3;
         border: 2px solid rgba(255, 255, 255, 1);
         outline: none;
+        background-color: #0056b3;
     }
 
     h1 {
@@ -71,7 +74,26 @@ $topnav-background-color: #121421;
             color: rgba(255, 255, 255, 0.7);
         }
     }
-
+    .bottom-div-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100vh;
+      }
+      
+      .bottom-div-container > div {
+        margin-bottom: 20px;
+      }
+      
+      .bottom-div-container a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      
+      .bottom-div-container a:hover {
+        text-decoration: underline;
+      }
+      
     .form-group {
         padding: 8px 0;
 
@@ -102,3 +124,4 @@ $topnav-background-color: #121421;
        
     }
 }
+

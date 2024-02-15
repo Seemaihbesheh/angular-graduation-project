@@ -8,6 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import { Status } from '../dashboard/components/add-post/models/status';
 import { UserStoreService } from '../user-store.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
     selector: 'app-findjob-page',
@@ -23,6 +24,8 @@ export class FindjobPageComponent implements OnInit {
   red: boolean =false;
 
 
+  usertest: {id:string};
+
   public tokenName: string = "";
   public email: string = "";
   public emailstring : string = "";
@@ -32,6 +35,8 @@ export class FindjobPageComponent implements OnInit {
 
     title: string ='sosos';
 
+
+    jobId:number=27
     public titleSEARCH!: string;
     public requirmentSEARCH!: string;
 
@@ -45,11 +50,37 @@ status!: Status;
     constructor(
         private service: AuthService, 
         private fb: FormBuilder,
-        private userStore: UserStoreService
+        private userStore: UserStoreService,
+        private rout:ActivatedRoute
        
       ) {}
 
 
+
+
+//       sortDatesDescending() {
+//         this.pushJob.sort((a, b) => {
+//           return b.job_Deadline - a.job_Deadline;
+//         });
+
+//         console.log("i will prite dates");
+//         console.log(this.pushJob);
+//  //this.getpushJob();
+//       }
+
+
+
+sortJobDeadlineDescending() {
+  this.pushJob.sort((a, b) => {
+    if (a.job_PuplishDate > b.job_PuplishDate) {
+      return -1; // a should come before b
+    } else if (a.job_PuplishDate < b.job_PuplishDate) {
+      return 1; // b should come before a
+    } else {
+      return 0; // both dates are equal, maintain current order
+    }
+  });
+}
 
 
 
@@ -57,9 +88,6 @@ status!: Status;
       checktime(){
 
         this.compareDates();
-
-
-
 
       }
    
@@ -194,9 +222,15 @@ confirmTosendcomapnyrequirment() {
 
     
       ngOnInit(): void {
+
+       
+
+
+
+
         this.getpushJob();
 
-        
+    
         this.userStore.getEmailFromStore()
         .subscribe(val => {
           //  console.log(" now in getFullemailFromStore function ");

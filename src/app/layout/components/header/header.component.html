@@ -1,26 +1,22 @@
-<nav    class="navbar navbar-expand-lg fixed-top">
-    <a class="navbar-brand" href="#">JOB HUP </a>
-    <button (click)="toggleSidebar()" class="navbar-toggler" type="button">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        <i aria-hidden="true" class="fa fa-bars text-muted"></i>
-    </button>
-    <div class="collapse navbar-collapse">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" placeholder="{{ 'Search' | translate }}" type="text" />
-        </form>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item d-none d-xl-block">
-                <a
-                    class="nav-link btn mt-1"
-                    href="https://github.com/start-angular/SB-Admin-BS4-Angular-7/archive/master.zip"
-                    role="button"
-                    style="padding: 0.375rem 1rem !important; border-color: #999;"
-                >
-                    {{ 'التسجيل كصاحب عمل '| translate }}
-                </a>
-            </li>
-            &nbsp;
-            <li class="nav-item">
+
+
+<div class="rtl">
+
+    
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="#">employmentJOb</a>
+        <button (click)="toggleSidebar()" class="navbar-toggler" type="button">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i aria-hidden="true" class="fa fa-bars text-muted"></i>
+        </button>
+        <div class="collapse navbar-collapse">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" placeholder="{{ 'Search' | translate }}" type="text" />
+            </form>
+            <ul class="navbar-nav ml-auto">
+                
+       
+                <li class="nav-item">
                 <a
                     (click)="rltAndLtr()"
                     class="nav-link mt-1"
@@ -41,7 +37,7 @@
                             alt="Generic placeholder image"
                             class="d-flex align-self-center mr-3"
                             src="http://i.huffpost.com/gadgets/slideshows/461162/slide_461162_6224974_sq50.jpg"
-                        />
+                            />
                         <div class="media-body">
                             <h5 class="mt-0 mb-1">John Smith</h5>
                             <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
@@ -74,15 +70,42 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown" ngbDropdown>
-                <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
+            <div class="notification-box" >
+                <i class="fa fa-bell-o"></i>
+                <span class="message" >
+                    {{ message }}
+                </span>
+              </div>
+              
+            <li class="nav-item dropdown"  ngbDropdown>
+
+                <!-- <app-header [display]="showNotification"></app-header> -->
+                
+                <a class="nav-link"  ngbDropdownToggle>
                     <i class="fa fa-bell"></i> <b class="caret"></b><span class="sr-only">(current)</span>
                 </a>
-                <div class="dropdown-menu-right" ngbDropdownMenu>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        {{ 'Pending Task' | translate }} <span class="badge badge-info">6</span>
+            
+           
+                <div class="dropdown-menu-right" ngbDropdownMenu >
+                    <a class="dropdown-item"  style="    background-color: #e9ecef !important">
+                        <div *ngIf="response">
+                            <ng-container *ngFor="let item of response.items" >
+                              <div *ngFor="let i of [].constructor(item.counter)">
+
+                            <button style="border: none; margin: 11px;" (click)="decrementCounter(item)">
+                                <p style="border-bottom: inset;">
+                                {{ item.message }}
+                                    <!-- {{item.name}} -->
+                                    
+                                </p>
+                             </button>
+                              </div>
+                              <!-- <p>العدد الإجمالي: {{ item.counter }}</p> -->
+                            </ng-container>
+                          </div>
+
                     </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
+                    <!-- <a class="dropdown-item" href="javascript:void(0)">
                         {{ 'In queue' | translate }} <span class="badge badge-info"> 13</span>
                     </a>
                     <a class="dropdown-item" href="javascript:void(0)">
@@ -91,10 +114,39 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="javascript:void(0)">
                         {{ 'View All' | translate }}
-                    </a>
+                    </a> -->
                 </div>
             </li>
-            <!-- <li class="nav-item dropdown" ngbDropdown>
+            <div style="  color: rgb(214, 7, 59);
+            position: relative;
+            right: 10px;
+            font-weight: bolder; ">
+                
+                <!-- <div *ngIf="response">
+                <ng-container *ngFor="let item of response.items" >
+                  <div *ngFor="let i of [].constructor(item.counter)">
+                  </div>
+                  <p>{{ item.counter }}</p>
+                </ng-container>
+              </div> -->
+
+              <div *ngIf="response">
+                  <ng-container *ngFor="let item of response.items">
+                    <div *ngFor="let i of [].constructor(item.counter)">
+                      <!-- <p>{{ item.message }}
+                        <button (click)="decrementCounter(item)">ازالة الاشعار</button>
+                      </p> -->
+                    </div>
+                  </ng-container>
+                  <p>{{ totalCounter }}</p>
+                </div>
+            </div>
+            <!-- <div *ngIf="showNotification">
+                <i class="fa fa-bell"></i>
+                <span>New employee added!</span>
+              </div> -->
+
+            <li class="nav-item dropdown" ngbDropdown>
                 <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
                     <i class="fa fa-language"></i> {{ 'Language' | translate }} <b class="caret"></b>
                 </a>
@@ -124,7 +176,7 @@
                         {{ 'Simplified Chinese' | translate }}
                     </a>
                 </div>
-            </li> -->
+            </li>
             <li class="nav-item dropdown" ngbDropdown>
                 <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
                     <i class="fa fa-user"></i> John Smith <b class="caret"></b>
@@ -147,3 +199,4 @@
         </ul>
     </div>
 </nav>
+</div>

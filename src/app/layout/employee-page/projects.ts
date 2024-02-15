@@ -2,9 +2,9 @@
 
 export interface projects {
     id : number;
-    Title:string;
+    title:string;
 
-    Decription :string;
+    decription :string;
    
     
 }

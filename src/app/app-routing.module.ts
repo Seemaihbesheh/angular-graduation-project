@@ -31,12 +31,38 @@ const routes: Routes = [
 
             // }
             // ,
+
             {
-                path: 'apply-job',
-                //gOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOD !!!
+                //path: 'apply-job',
+
+                
+                path: 'apply-jobs/:id',
+           
                 loadChildren: () => import('./layout/applyJob-page/applyJob-page.module').then((m) => m.ApplyJobPageModule)
             }
-           
+           ,
+
+
+           {
+            path: 'company-page/:id',
+            loadChildren: () => import('./layout/company-page/company-page.module').then((m) => m.CompanyPageModule)
+
+        }
+        ,
+           ///userapply
+           {
+            //path: 'apply-job',
+            path: 'userapply-job/:id',
+       
+            loadChildren: () => import('./layout/userapplyJob-page/userapplyJob-page.module').then((m) => m.UserApplyJobPageModule)
+        }
+       ,
+           {
+            //path: 'apply-job',
+            path: 'apply-jobs',
+       
+            loadChildren: () => import('./layout/applyJob-page/applyJob-page.module').then((m) => m.ApplyJobPageModule)
+        }
             // 
            
             ,
@@ -49,13 +75,24 @@ const routes: Routes = [
 
         }
             ,
+           
+         
             {
                 path: 'employee-page',
                 loadChildren: () => import('./layout/employee-page/employee-page.module').then((m) => m.EmployeePageModule)
 
 
             }
+            
             ,
+            {
+                path: 'employee-page/:id',
+                loadChildren: () => import('./layout/employee-page/employee-page.module').then((m) => m.EmployeePageModule)
+
+
+            }
+
+      ,
             //   admin-page
             {
                 path: 'admin-page',
@@ -108,12 +145,39 @@ const routes: Routes = [
 
 
             }
-            ,
+            ,//companytable-page
+            {
+                path: 'companytable-page',
+                loadChildren: () => import('./layout/companytable-page/companytable-page.module').then((m) => m.CompanytablePageModule)
 
+
+            }
+            ,
+            {
+                path: 'findjobCompany-page',
+                loadChildren: () => import('./layout/findjobCompany-page/findjobCompany-page.module').then((m) => m.FindjobCompanyPageModule)
+
+
+            }
+             ,
+            {
+                path: 'company-page/:id',
+                loadChildren: () => import('./layout/company-page/company-page.module').then((m) => m.CompanyPageModule)
+
+            }
+            ,
 
             {
                 path: 'blank-page',
                 loadChildren: () => import('./layout/blank-page/blank-page.module').then((m) => m.BlankPageModule)
+
+            }
+            ,
+
+            //alllCom-page
+            {
+                path: 'alllCom-page',
+                loadChildren: () => import('./layout/alllCom-page/alllCom-page.module').then((m) => m.AlllComPageModule)
 
             }
             ,

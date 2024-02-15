@@ -1,0 +1,30 @@
+<div [@routerTransition] >
+   
+</div>
+<h2>The jobs you applied for</h2>
+<br>
+
+<div class="card mb-3">
+    <br><br>
+
+    <div class="card-body">
+        <div *ngFor="let user of AppyJobs" class="mb-3">
+            <div>
+                <strong>Job ID: </strong>{{user.pushJob.id}}
+            </div>
+            <div>
+                <strong>Job Title: </strong>{{user.pushJob.pre_title}}
+            </div>
+            <div>
+                <strong>The CV you uploaded: </strong>
+                <a href="{{user.productImage}}" target="_blank">{{user.fileDisplayName}}</a>
+            </div>
+            <br>
+            <hr>
+        
+        </div>
+    </div>
+</div>
+
+<br>
+<br>

@@ -11,31 +11,14 @@
                 </div>
 
                 <div class="list-group list-group-flush" role="tablist">
-                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account"
+                    <a  [routerLink]="['/admin-page']"  class="list-group-item list-group-item-action active" data-toggle="list" href="#account"
                         role="tab">
-                        Account
+                        Personal Info
                     </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#password" role="tab">
-                        Password
-                    </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">
-                        Privacy and safety
-                    </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">
-                        Email notifications
-                    </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">
-                        Web notifications
-                    </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">
-                        Widgets
-                    </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">
-                        Your data
-                    </a>
-                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">
-                        Delete account
-                    </a>
+
+
+                  
+                    
                 </div>
             </div>
         </div>
@@ -145,11 +128,7 @@
                                         placeholder="Email">
                                 </div>
                                 <br>
-                                <div class="form-group col-md-6">
-                                    <label for="inputAddress">Address</label>
-                                    <input type="text" class="form-control" id="inputAddress"
-                                        placeholder="1234 Main St">
-                                </div>      <br>
+                               
                                 <div class="form-group col-md-6">
                                     <label for="inputAddress2">phoneNumber </label>
                                     <input type="text" class="form-control" formControlName="phoneNumber"

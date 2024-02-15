@@ -94,6 +94,21 @@ export class DashboardComponent implements OnInit {
 
 
 
+        this.userStore.getIdFromStore()
+        .subscribe(val => {
+            //console.log(" now in getRoleFromStore function ");
+
+
+            let fulllidFromToken = this.auth.getIdFromTken();// string
+
+
+            var numberValue = Number(fulllidFromToken);
+
+            this.id_login = val || numberValue
+            console.log("user data 'idd' whose login  form dashbored ");
+
+            console.log(this.id_login);
+        })
 
 
      
@@ -152,22 +167,7 @@ export class DashboardComponent implements OnInit {
 
             
 
-            this.userStore.getIdFromStore()
-            .subscribe(val => {
-                //console.log(" now in getRoleFromStore function ");
-
-
-                let fulllidFromToken = this.auth.getIdFromTken();// string
-
-
-                var numberValue = Number(fulllidFromToken);
-
-                this.id_login = val || numberValue
-                console.log("user data 'idd' whose login == == = = = ");
-
-                console.log(this.id_login);
-            })
-
+            
 
             this.getuserid();
 this.getuserss();
